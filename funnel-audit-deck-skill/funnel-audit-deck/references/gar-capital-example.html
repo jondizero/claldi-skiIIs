@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<base href="/decks/gar-capital/">
-<title>GAR Capital — Info Operation</title>
+<base href="/decks/logan-fullmer/">
+<title>Logan Fullmer — Info Operation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
   :root, [data-theme="dark"]{
     --bg:#050506;--surface:#0d0e10;--surface-2:#141519;
     --ink:#f2f4f3;--ink-soft:#b9c1c3;--ink-muted:#767f82;--line:rgba(255,255,255,0.09);
-    --accent-fill:#00ff94;--accent-text:#00ff94;--accent-soft:rgba(0,255,148,0.1);
+    --accent-fill:#BC8621;--accent-text:#BC8621;--accent-soft:rgba(188,134,33,0.1);
     --danger-fill:#ff5266;--danger-text:#ff5266;--danger-soft:rgba(255,82,102,0.1);
     --shadow-soft:rgba(0,0,0,0.6);--dot-color:#333;--on-accent:#00130b;
     --display:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;--sans:'Inter',sans-serif;
@@ -21,7 +21,7 @@
   [data-theme="light"]{
     --bg:#e6e6e6;--surface:#ffffff;--surface-2:#f1f1f1;
     --ink:#14151a;--ink-soft:#4a4d54;--ink-muted:#82858c;--line:rgba(0,0,0,0.1);
-    --accent-fill:#00ff94;--accent-text:#00915c;--accent-soft:rgba(0,145,92,0.1);
+    --accent-fill:#BC8621;--accent-text:#8a6119;--accent-soft:rgba(138,97,25,0.1);
     --danger-fill:#ff5266;--danger-text:#c81f3f;--danger-soft:rgba(200,31,63,0.1);
     --shadow-soft:rgba(0,0,0,0.14);--dot-color:#cfcfcf;--on-accent:#00130b;
   }
@@ -108,8 +108,9 @@
   /* closing */
   .slide-closing{align-items:center;text-align:center}
   .slide-closing .slide-inner{display:flex;flex-direction:column;align-items:center}
-  .cta-btn{margin-top:32px;display:inline-flex;align-items:center;gap:10px;border:1px solid var(--accent-fill);border-radius:100px;padding:16px 32px;font-family:var(--mono);font-size:13px;color:var(--on-accent);letter-spacing:.06em;background:var(--accent-fill);text-decoration:none;font-weight:600;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
-  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px -8px var(--accent-soft)}
+  .cta-btn{margin-top:32px;display:inline-flex;align-items:center;gap:12px;border:none;border-radius:10px;padding:22px 48px;font-family:var(--mono);font-size:15px;color:var(--on-accent);letter-spacing:.06em;background:var(--accent-fill);text-decoration:none;font-weight:700;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease);box-shadow:0 14px 34px -12px var(--accent-soft)}
+  .cta-btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 20px 45px -12px var(--accent-soft)}
+  .cta-btn:active{transform:translateY(-1px) scale(.99)}
 
   .progress{position:fixed;top:0;left:0;right:0;height:2px;background:rgba(255,255,255,.06);z-index:100}
   .progress-bar{height:100%;background:var(--accent-fill);transition:width .15s linear;box-shadow:0 0 10px var(--accent-fill)}
@@ -132,92 +133,89 @@
 <!-- 01 — COVER -->
 <section class="slide slide-cover visible">
   <div class="slide-inner">
-    <img src="images/logo-gar.png" alt="GAR Capital" class="cover-logo reveal">
-    <h1 class="reveal">GAR Capital<br><em>Info Operation</em></h1>
+    <img src="images/logo.png" alt="Logan Fullmer" class="cover-logo reveal">
+    <h1 class="reveal">Logan Fullmer<br><em>Info Operation</em></h1>
     <div class="cover-tag reveal">· JULY 2026 ·</div>
   </div>
-  <div class="slide-meta"><span>01</span><span class="dot"></span><span>19</span></div>
+  <div class="slide-meta"><span>01</span><span class="dot"></span><span>15</span></div>
 </section>
 
 <!-- 02 — INTRO -->
 <section class="slide slide-section">
   <div class="slide-inner">
     <div class="kicker reveal">IT ONLY TAKES 45 SECONDS</div>
-    <h2 class="reveal">I went through your info setup (funnel) and a few things stood out.</h2>
+    <h2 class="reveal">Logan, I went through your info setup (funnel) and a few things stood out.</h2>
     <p class="reveal" style="margin:20px auto 0">Some are quietly costing you revenue. Others are opportunities that could increase your return without increasing your work.</p>
     <div class="stat-row reveal">
-      <div class="stat-chip"><b>6</b> facts found</div>
-      <div class="stat-chip"><b>6</b> fixes proposed</div>
+      <div class="stat-chip"><b>3</b> facts found</div>
+      <div class="stat-chip"><b>3</b> fixes proposed</div>
       <div class="stat-chip">+ new opportunities ahead</div>
     </div>
   </div>
-  <div class="slide-meta"><span>02</span><span class="dot"></span><span>19</span></div>
+  <div class="slide-meta"><span>02</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 03 — FACT 01 (offer / ascension) -->
+<!-- 03 — FACT 01 -->
 <section class="slide slide-split">
   <div class="slide-inner">
     <div class="split-media reveal">
-      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/shot-price-2999.png" alt="Course checkout page"></div>
+      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck1-fact.png" alt="Current offer headline"></div>
     </div>
     <div class="split-text reveal">
       <div class="kicker is-problem">FACT 01</div>
-      <h2>You Sold the Course. Then Nothing.</h2>
-      <p>The $29.99 checkout ends right there. No order bump, no upsell — revenue left on the table on every approved sale.</p>
+      <h2>Your Headline Speaks to No One</h2>
+      <p>The current headline makes no promise, targets no one, and gives no reason to keep reading. It doesn't do justice to how good the offer actually is.</p>
       <ul class="list-terminal is-problem">
-        <li>No order bump at checkout</li>
-        <li>No upsell offer post-purchase</li>
-        <li>Average ticket capped at the entry product</li>
+        <li>No precision on who it's for</li>
+        <li>No specific promise or outcome</li>
+        <li>The offer's real value gets buried</li>
       </ul>
     </div>
   </div>
-  <div class="slide-meta"><span>03</span><span class="dot"></span><span>19</span></div>
+  <div class="slide-meta"><span>03</span><span class="dot"></span><span>15</span></div>
 </section>
 
 <!-- 04 — FIX 01 -->
 <section class="slide slide-split flip">
   <div class="slide-inner">
     <div class="split-media reveal">
-      <div class="flow">
-        <div class="flow-step"><b>$29.99</b>Course checkout</div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step"><b>+ Order Bump</b>Complementary offer</div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step"><b>Upsell</b>Masterclass / higher ticket</div>
+      <div class="shot-wrap">
+        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck1-fix.png" alt="Rewritten offer headline"></div>
+        <div class="badge">after</div>
       </div>
     </div>
     <div class="split-text reveal">
       <div class="kicker is-solution">FIX 01</div>
-      <h2>An Ascension Path Right After the Yes</h2>
-      <p>Anyone buying the entry course already said yes to GAR Capital. That's the moment to offer the next step — inside the checkout flow, not later.</p>
+      <h2>Precision Targeting, Real Promise</h2>
+      <p>A headline built around Logan's best-fit ICP, with a clear, specific promise — so the presentation of the offer finally matches how strong the offer itself is.</p>
       <ul class="list-terminal is-solution">
-        <li>Order bump at the moment of purchase</li>
-        <li>Automatic post-checkout fake onboarding</li>
-        <li>Higher average ticket, no extra traffic needed</li>
+        <li>Speaks directly to the ideal buyer</li>
+        <li>Leads with a concrete, believable promise</li>
+        <li>Presentation now matches offer quality</li>
       </ul>
     </div>
   </div>
-  <div class="slide-meta"><span>04</span><span class="dot"></span><span>19</span></div>
+  <div class="slide-meta"><span>04</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 05 — FACT 02 (masterclass hidden) -->
+<!-- 05 — FACT 02 -->
 <section class="slide slide-split">
   <div class="slide-inner">
     <div class="split-media reveal">
-      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/shot-masterclass-card.png" alt="Masterclass offer hidden"></div>
+      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck2-fact.png" alt="Current mobile landing page"></div>
     </div>
     <div class="split-text reveal">
       <div class="kicker is-problem">FACT 02</div>
-      <h2>Your Highest-Ticket Offer Is Hiding</h2>
-      <p>The Masterclass — likely GAR's highest-value offer — sits buried mid-page, with no spotlight and no strong CTA.</p>
+      <h2>The Page Fights Its Own Visitors</h2>
+      <p>On mobile, the headline sits below the video and there's no CTA above the fold. The form is buried further down and dumps every question on the visitor at once.</p>
       <ul class="list-terminal is-problem">
-        <li>No visual spotlight on the page</li>
-        <li>No direct CTA for this offer</li>
-        <li>Easy to scroll past and never see</li>
+        <li>No CTA above the fold on mobile</li>
+        <li>Form hidden, asks everything at once</li>
+        <li>Structure works against conversion</li>
       </ul>
     </div>
   </div>
-  <div class="slide-meta"><span>05</span><span class="dot"></span><span>19</span></div>
+  <div class="slide-meta"><span>05</span><span class="dot"></span><span>15</span></div>
 </section>
 
 <!-- 06 — FIX 02 -->
@@ -225,254 +223,148 @@
   <div class="slide-inner">
     <div class="split-media reveal">
       <div class="shot-wrap">
-        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/shot-masterclass-card.png" alt="Masterclass repositioned"></div>
-        <div class="badge">repositioned</div>
+        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck2-fix.png" alt="Rebuilt mobile landing page"></div>
+        <div class="badge">after</div>
       </div>
     </div>
     <div class="split-text reveal">
       <div class="kicker is-solution">FIX 02</div>
-      <h2>Masterclass as the Natural Next Step</h2>
-      <p>Same offer, now positioned as the logical step after the entry course — inside the ascension path, not lost in the content.</p>
+      <h2>Mobile-First, One Question at a Time</h2>
+      <p>Headline above the video, a CTA visible without scrolling, and a dedicated one-question-at-a-time form instead of a wall of fields buried in the page.</p>
       <ul class="list-terminal is-solution">
-        <li>Enters as an upsell inside the funnel</li>
-        <li>Its own visible CTA</li>
-        <li>No longer lost in the middle of the page</li>
+        <li>CTA visible above the fold on mobile</li>
+        <li>Dedicated, step-by-step form</li>
+        <li>VSL script kept, ready for A/B testing</li>
       </ul>
     </div>
   </div>
-  <div class="slide-meta"><span>06</span><span class="dot"></span><span>19</span></div>
+  <div class="slide-meta"><span>06</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 07 — FACT 03 (generic positioning) -->
+<!-- 07 — FACT 03 (no bumpsells) -->
 <section class="slide slide-split">
   <div class="slide-inner">
     <div class="split-media reveal">
-      <div class="shot duo">
-        <div class="shot-frame"><img src="images/shot-lifetime-access.png" alt="Generic offer 1"></div>
-        <div class="shot-frame"><img src="images/shot-daily-alerts.png" alt="Generic offer 2"></div>
+      <div class="flow">
+        <div class="flow-step"><b>Free Book</b>Checkout</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><b>Nothing</b>No bump, no upsell</div>
       </div>
     </div>
     <div class="split-text reveal">
       <div class="kicker is-problem">FACT 03</div>
-      <h2>Generic Offer, Unclear Audience</h2>
-      <p>"Lifetime Access to GAR Labs" and "Daily Alerts, Live Trading" could describe almost any trading product. They don't say what makes GAR different, or who it's for.</p>
+      <h2>The Free Book Funnel Leaves Money on the Table</h2>
+      <p>There's no bumpsell in the free book funnel. Every checkout ends flat, with no attempt to raise average order value in the moment buyers are most engaged.</p>
       <ul class="list-terminal is-problem">
-        <li>No real differentiation from competitors</li>
-        <li>No defined target audience in the copy</li>
-        <li>Copy any competitor could replicate</li>
+        <li>No order bump at checkout</li>
+        <li>AOV isn't increasing on any sale</li>
+        <li>Acquisition cost stays higher than it needs to</li>
       </ul>
     </div>
   </div>
-  <div class="slide-meta"><span>07</span><span class="dot"></span><span>19</span></div>
+  <div class="slide-meta"><span>07</span><span class="dot"></span><span>15</span></div>
 </section>
 
 <!-- 08 — FIX 03 -->
 <section class="slide slide-split flip">
   <div class="slide-inner">
     <div class="split-media reveal">
-      <div class="shot-wrap">
-        <div class="shot duo">
-          <div class="shot-frame"><img src="images/shot-lifetime-access.png" alt="Repositioned offer 1"></div>
-          <div class="shot-frame"><img src="images/shot-daily-alerts.png" alt="Repositioned offer 2"></div>
-        </div>
-        <div class="badge">repositioned</div>
+      <div class="flow">
+        <div class="flow-step"><b>Free Book</b>Checkout</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><b>+ Bump Offer</b>Simple, related add-on</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><b>Lower CAC</b>Higher AOV per buyer</div>
       </div>
     </div>
     <div class="split-text reveal">
       <div class="kicker is-solution">FIX 03</div>
-      <h2>Repositioned With Its Own Identity</h2>
-      <p>Same offer, new language: what only GAR has — GAR Labs, proprietary AI, Carlos G.'s mentorship — front and center, aimed at a clearly defined audience.</p>
+      <h2>A Simple Bump Right at the Yes</h2>
+      <p>Add a simple order bump at checkout to lift AOV immediately, which effectively lowers customer acquisition cost across the whole free book funnel.</p>
       <ul class="list-terminal is-solution">
-        <li>Real differentiators front and center</li>
-        <li>Target audience explicit in the copy</li>
-        <li>An identity competitors can't copy</li>
+        <li>One-click bump at the moment of purchase</li>
+        <li>Higher AOV, no extra traffic needed</li>
+        <li>Lower effective CAC across the funnel</li>
       </ul>
     </div>
   </div>
-  <div class="slide-meta"><span>08</span><span class="dot"></span><span>19</span></div>
+  <div class="slide-meta"><span>08</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 09 — FACT 04 (no qualification) -->
-<section class="slide slide-split">
-  <div class="slide-inner">
-    <div class="split-media reveal">
-      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/shot-calendar-booking.png" alt="Calendar with no filter"></div>
-    </div>
-    <div class="split-text reveal">
-      <div class="kicker is-problem">FACT 04</div>
-      <h2>Anyone Can Book the Call — Even People Who'll Never Buy</h2>
-      <p>The calendar is open with zero filter beforehand. That means sales time spent on people with no budget, fit, or real intent to buy.</p>
-      <ul class="list-terminal is-problem">
-        <li>No filter before booking</li>
-        <li>Calls with unqualified leads</li>
-        <li>Sales time poorly spent</li>
-      </ul>
-    </div>
-  </div>
-  <div class="slide-meta"><span>09</span><span class="dot"></span><span>19</span></div>
-</section>
-
-<!-- 10 — FIX 04 -->
-<section class="slide slide-split flip">
-  <div class="slide-inner">
-    <div class="split-media reveal">
-      <div class="shot-wrap">
-        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/shot-calendar-booking.png" alt="Calendar with qualification form"></div>
-        <div class="badge">+ form before</div>
-      </div>
-    </div>
-    <div class="split-text reveal">
-      <div class="kicker is-solution">FIX 04</div>
-      <h2>A Qualification Form Before the Call</h2>
-      <p>Before hitting the calendar, people answer a few key questions — budget, experience, intent. Only the right leads make it to the call.</p>
-      <ul class="list-terminal is-solution">
-        <li>Automatic filter before booking</li>
-        <li>Calls only with qualified leads</li>
-        <li>Sales team focused on who converts</li>
-      </ul>
-    </div>
-  </div>
-  <div class="slide-meta"><span>10</span><span class="dot"></span><span>19</span></div>
-</section>
-
-<!-- 11 — FACT 05 (VSL buried) -->
-<section class="slide slide-split">
-  <div class="slide-inner">
-    <div class="split-media reveal">
-      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/shot-vsl-video.png" alt="VSL buried mid-page"></div>
-    </div>
-    <div class="split-text reveal">
-      <div class="kicker is-problem">FACT 05</div>
-      <h2>The VSL Is Buried Mid-Page</h2>
-      <p>The sales video — the highest-converting asset in a trading funnel — sits mid-scroll, competing with bullets and text around it.</p>
-      <ul class="list-terminal is-problem">
-        <li>No spotlight above the fold</li>
-        <li>Competes with the rest of the content</li>
-        <li>Most traffic never reaches it</li>
-      </ul>
-    </div>
-  </div>
-  <div class="slide-meta"><span>11</span><span class="dot"></span><span>19</span></div>
-</section>
-
-<!-- 12 — FIX 05 -->
-<section class="slide slide-split flip">
-  <div class="slide-inner">
-    <div class="split-media reveal">
-      <div class="shot-wrap">
-        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/shot-quantumcipher-landing.png" alt="VSL on top of new landing page"></div>
-        <div class="badge">after</div>
-      </div>
-    </div>
-    <div class="split-text reveal">
-      <div class="kicker is-solution">FIX 05</div>
-      <h2>VSL on Top, No Distractions</h2>
-      <p>The refreshed VSL moves to the top of a single dedicated landing page — the first thing people see.</p>
-      <ul class="list-terminal is-solution">
-        <li>VSL above the fold</li>
-        <li>Nothing competing for attention</li>
-        <li>More people watch it through</li>
-      </ul>
-    </div>
-  </div>
-  <div class="slide-meta"><span>12</span><span class="dot"></span><span>19</span></div>
-</section>
-
-<!-- 13 — FACT 06 (too many links, last problem) -->
-<section class="slide slide-split">
-  <div class="slide-inner">
-    <div class="split-media reveal">
-      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/shot-ig-links-popup.png" alt="Instagram link page"></div>
-    </div>
-    <div class="split-text reveal">
-      <div class="kicker is-problem">FACT 06</div>
-      <h2>Too Many Options, No Decision</h2>
-      <p>Your Instagram link page shows 5 different paths at once. When people don't know where to go, most don't go anywhere at all.</p>
-      <ul class="list-terminal is-problem">
-        <li>5 links competing for the same attention</li>
-        <li>No clear hierarchy between them</li>
-        <li>Leads drop off before deciding</li>
-      </ul>
-    </div>
-  </div>
-  <div class="slide-meta"><span>13</span><span class="dot"></span><span>19</span></div>
-</section>
-
-<!-- 14 — FIX 06 -->
-<section class="slide slide-split flip">
-  <div class="slide-inner">
-    <div class="split-media reveal">
-      <div class="shot-wrap">
-        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/shot-quantumcipher-landing.png" alt="One dedicated landing page"></div>
-        <div class="badge">after</div>
-      </div>
-    </div>
-    <div class="split-text reveal">
-      <div class="kicker is-solution">FIX 06</div>
-      <h2>One Link. One Page. One Decision.</h2>
-      <p>The menu of links becomes one dedicated page with a single offer — the same fresh landing page from the fix above, clear in 5 seconds what to do next.</p>
-      <ul class="list-terminal is-solution">
-        <li>One dedicated page, one CTA</li>
-        <li>Same landing page as the VSL fix</li>
-        <li>Zero competition for attention</li>
-      </ul>
-    </div>
-  </div>
-  <div class="slide-meta"><span>14</span><span class="dot"></span><span>19</span></div>
-</section>
-
-<!-- 15 — NEXT-LEVEL OPPORTUNITY 01 -->
+<!-- 09 — OPPORTUNITY 01 -->
 <section class="slide slide-section">
   <div class="slide-inner">
     <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 01</div>
-    <h2 class="reveal">New Funnels To Bring In Leads</h2>
-    <p class="reveal" style="margin:20px auto 0">Beyond fixing what's already there, live webinars, free training, and paid Meta ads can open new doors at the top of the funnel.</p>
+    <h2 class="reveal">More Doors to Open</h2>
+    <p class="reveal" style="margin:20px auto 0">Right now there's one path to conversion. Adding webinars and low-ticket products creates more entry points for different buyer readiness levels.</p>
     <div class="icon-grid reveal">
       <div class="icon-card"><img src="/assets/icons/webinar-generic.png" alt="Webinar"><span>Webinar</span></div>
-      <div class="icon-card"><img src="/assets/icons/free-training-generic.png" alt="Free Training"><span>Free Training</span></div>
-      <div class="icon-card"><img src="/assets/icons/meta.png" alt="Meta Ads"><span>Meta Ads</span></div>
     </div>
   </div>
-  <div class="slide-meta"><span>15</span><span class="dot"></span><span>19</span></div>
+  <div class="slide-meta"><span>09</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 16 — NEXT-LEVEL OPPORTUNITY 02 -->
+<!-- 10 — OPPORTUNITY 02 -->
 <section class="slide slide-section">
   <div class="slide-inner">
     <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 02</div>
-    <h2 class="reveal">Get More Out of Email and Discord</h2>
-    <p class="reveal" style="margin:20px auto 0">You already have an email list and a Discord community. Both can be used more aggressively for nurture, alerts, and re-engagement.</p>
+    <h2 class="reveal">Expand the Content Footprint</h2>
+    <p class="reveal" style="margin:20px auto 0">Presence is concentrated on one or two channels. Adding X, LinkedIn, and consistent YouTube output compounds reach without paid spend.</p>
     <div class="icon-grid reveal">
-      <div class="icon-card"><img src="/assets/icons/gmail.png" alt="Email"><span>Email</span></div>
-      <div class="icon-card"><img src="/assets/icons/discord.png" alt="Discord"><span>Discord</span></div>
+      <div class="icon-card"><img src="/assets/icons/x.png" alt="X"><span>X</span></div>
+      <div class="icon-card"><img src="/assets/icons/linkedin.png" alt="LinkedIn"><span>LinkedIn</span></div>
+      <div class="icon-card"><img src="/assets/icons/youtube.png" alt="YouTube"><span>YouTube</span></div>
     </div>
   </div>
-  <div class="slide-meta"><span>16</span><span class="dot"></span><span>19</span></div>
+  <div class="slide-meta"><span>10</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 17 — NEXT-LEVEL OPPORTUNITY 03 -->
+<!-- 11 — OPPORTUNITY 03 -->
 <section class="slide slide-section">
   <div class="slide-inner">
     <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 03</div>
-    <h2 class="reveal">A Real Social Media Strategy</h2>
-    <p class="reveal" style="margin:20px auto 0">Instagram, X, Threads, YouTube, and LinkedIn are underused as acquisition channels. A consistent content strategy across these can feed the funnel from the top.</p>
-    <div class="icon-circle reveal">
-      <div class="icon-card" style="left:50%;top:12%"><img src="/assets/icons/instagram.png" alt="Instagram"><span>Instagram</span></div>
-      <div class="icon-card" style="left:86.1%;top:38.3%"><img src="/assets/icons/x.png" alt="X"><span>X</span></div>
-      <div class="icon-card" style="left:72.3%;top:80.7%"><img src="/assets/icons/threads.png" alt="Threads"><span>Threads</span></div>
-      <div class="icon-card" style="left:27.7%;top:80.7%"><img src="/assets/icons/youtube.png" alt="YouTube"><span>YouTube</span></div>
-      <div class="icon-card" style="left:13.9%;top:38.3%"><img src="/assets/icons/linkedin.png" alt="LinkedIn"><span>LinkedIn</span></div>
+    <h2 class="reveal">Activate the Email List</h2>
+    <p class="reveal" style="margin:20px auto 0">If there's a list sitting mostly unused, it's a free asset. Systematic nurture and promo sequences can turn it into a recurring revenue channel.</p>
+    <div class="icon-grid reveal">
+      <div class="icon-card"><img src="/assets/icons/gmail.png" alt="Email"><span>Email</span></div>
     </div>
   </div>
-  <div class="slide-meta"><span>17</span><span class="dot"></span><span>19</span></div>
+  <div class="slide-meta"><span>11</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 18 — THE BIG PICTURE -->
+<!-- 12 — OPPORTUNITY 04 -->
+<section class="slide slide-section">
+  <div class="slide-inner">
+    <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 04</div>
+    <h2 class="reveal">A Sharper Positioning Angle</h2>
+    <p class="reveal" style="margin:20px auto 0">A sharper personal angle — like the "dad" angle — differentiates from generic real-estate-guru positioning and builds trust faster.</p>
+  </div>
+  <div class="slide-meta"><span>12</span><span class="dot"></span><span>15</span></div>
+</section>
+
+<!-- 13 — OPPORTUNITY 05 -->
+<section class="slide slide-section">
+  <div class="slide-inner">
+    <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 05</div>
+    <h2 class="reveal">Build an Ascension Plan</h2>
+    <p class="reveal" style="margin:20px auto 0">There's no clear path from free book buyer to higher-ticket offers. A structured ascension ladder increases lifetime value per lead.</p>
+    <div class="flow reveal" style="max-width:640px">
+      <div class="flow-step"><b>Free Book</b>Entry point</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><b>Low Ticket</b>Bump / upsell</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><b>Core Offer</b>Mentorship / coaching</div>
+    </div>
+  </div>
+  <div class="slide-meta"><span>13</span><span class="dot"></span><span>15</span></div>
+</section>
+
+<!-- 14 — THE BIG PICTURE (slide fixo, sempre igual) -->
 <section class="slide slide-section">
   <div class="slide-inner">
     <div class="kicker reveal">THE BIG PICTURE</div>
     <h2 class="reveal">What I See Is Leverage.</h2>
-    <p class="reveal" style="margin:22px auto 0">None of these recommendations are about adding complexity. They're about creating leverage.</p>
+    <p class="reveal" style="margin:22px auto 0">None of these recommendations are about adding complexity. We want to create leverage.</p>
     <ul class="list-terminal is-solution reveal" style="text-align:left;max-width:44ch">
       <li>Leverage that turns more visitors into buyers</li>
       <li>Leverage that turns buyers into long-term customers</li>
@@ -480,18 +372,18 @@
     </ul>
     <p class="reveal" style="margin:22px auto 0">That's the opportunity I believe is sitting in front of you.</p>
   </div>
-  <div class="slide-meta"><span>18</span><span class="dot"></span><span>19</span></div>
+  <div class="slide-meta"><span>14</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 19 — CLOSING -->
+<!-- 15 — CLOSING (slide fixo, sempre igual) -->
 <section class="slide slide-closing">
   <div class="slide-inner">
     <div class="kicker reveal">NEXT STEPS</div>
     <h2 class="reveal">If this resonates, let's talk.</h2>
-    <p class="reveal" style="margin:20px auto 0">I already have a few ideas on how I'd approach this. If you'd like to explore them together, click the red button below and we'll take it from there.</p>
+    <p class="reveal" style="margin:20px auto 0">I already have a few ideas on how I'd approach this. If you'd like to explore them together, click the button below and we'll take it from there.</p>
     <a href="https://www.instagram.com/direct/t/115335963192552/" target="_blank" rel="noopener" class="cta-btn reveal">Message me on Instagram →</a>
   </div>
-  <div class="slide-meta"><span>19</span><span class="dot"></span><span>19</span></div>
+  <div class="slide-meta"><span>15</span><span class="dot"></span><span>15</span></div>
 </section>
 
 <script>
