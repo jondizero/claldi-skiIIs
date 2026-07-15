@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<base href="/decks/logan-fullmer/">
-<title>Logan Fullmer — Info Operation</title>
+<base href="/decks/barry-hartman/">
+<title>Barry Hartman — Info Operation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -12,18 +12,18 @@
   :root, [data-theme="dark"]{
     --bg:#050506;--surface:#0d0e10;--surface-2:#141519;
     --ink:#f2f4f3;--ink-soft:#b9c1c3;--ink-muted:#767f82;--line:rgba(255,255,255,0.09);
-    --accent-fill:#BC8621;--accent-text:#BC8621;--accent-soft:rgba(188,134,33,0.1);
+    --accent-fill:#FEFD27;--accent-text:#FEFD27;--accent-soft:rgba(254,253,39,0.1);
     --danger-fill:#ff5266;--danger-text:#ff5266;--danger-soft:rgba(255,82,102,0.1);
-    --shadow-soft:rgba(0,0,0,0.6);--dot-color:#333;--on-accent:#00130b;
+    --shadow-soft:rgba(0,0,0,0.6);--dot-color:#333;--on-accent:#141400;
     --display:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;--sans:'Inter',sans-serif;
     --ease:cubic-bezier(.16,1,.3,1);
   }
   [data-theme="light"]{
     --bg:#e6e6e6;--surface:#ffffff;--surface-2:#f1f1f1;
     --ink:#14151a;--ink-soft:#4a4d54;--ink-muted:#82858c;--line:rgba(0,0,0,0.1);
-    --accent-fill:#BC8621;--accent-text:#8a6119;--accent-soft:rgba(138,97,25,0.1);
+    --accent-fill:#FEFD27;--accent-text:#8a8000;--accent-soft:rgba(138,128,0,0.1);
     --danger-fill:#ff5266;--danger-text:#c81f3f;--danger-soft:rgba(200,31,63,0.1);
-    --shadow-soft:rgba(0,0,0,0.14);--dot-color:#cfcfcf;--on-accent:#00130b;
+    --shadow-soft:rgba(0,0,0,0.14);--dot-color:#cfcfcf;--on-accent:#141400;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
@@ -55,7 +55,7 @@
   /* cover */
   .slide-cover{align-items:center;text-align:center}
   .slide-cover .slide-inner{display:flex;flex-direction:column;align-items:center}
-  .cover-logo{height:34px;margin-bottom:40px;filter:brightness(0) invert(1)}
+  .cover-logo{height:34px;margin-bottom:40px}
   .slide-cover h1{font-size:clamp(38px,6.5vw,76px);margin-bottom:22px}
   .slide-cover h1 em{color:var(--accent-text);font-style:normal}
   .cover-tag{font-family:var(--mono);font-size:12px;color:var(--ink-muted);letter-spacing:.1em}
@@ -99,12 +99,6 @@
   .icon-card img{width:34px;height:34px;object-fit:contain;border-radius:6px}
   .icon-card span{font-family:var(--mono);font-size:11px;color:var(--ink-muted);text-align:center}
 
-  /* icon circle layout */
-  .icon-circle{position:relative;width:min(420px,88vw);aspect-ratio:1;margin:48px auto 0}
-  .icon-circle::before{content:"";position:absolute;inset:12%;border:1px dashed var(--line);border-radius:50%}
-  .icon-circle .icon-card{position:absolute;width:108px;transform:translate(-50%,-50%)}
-  @media (max-width:520px){.icon-circle .icon-card{width:84px;padding:14px 8px}.icon-circle .icon-card img{width:26px;height:26px}}
-
   /* closing */
   .slide-closing{align-items:center;text-align:center}
   .slide-closing .slide-inner{display:flex;flex-direction:column;align-items:center}
@@ -133,18 +127,48 @@
 <!-- 01 — COVER -->
 <section class="slide slide-cover visible">
   <div class="slide-inner">
-    <img src="images/logo.png" alt="Logan Fullmer" class="cover-logo reveal">
-    <h1 class="reveal">Logan Fullmer<br><em>Info Operation</em></h1>
+    <img src="images/logo.png" alt="Barry Hartman" class="cover-logo reveal">
+    <h1 class="reveal">Barry Hartman<br><em>Info Operation</em></h1>
     <div class="cover-tag reveal">· JULY 2026 ·</div>
   </div>
   <div class="slide-meta"><span>01</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 02 — INTRO -->
+<!-- 02 — MARKET CONTEXT -->
+<section class="slide slide-split">
+  <div class="slide-inner">
+    <div class="split-media reveal">
+      <div class="shot"><img src="images/market-growth.png" alt="Global online education market growth statistics"></div>
+    </div>
+    <div class="split-text reveal">
+      <div class="kicker">THE ONLINE EDUCATION MARKET KEEPS EXPANDING</div>
+      <h2>Expertise is no longer what separates the winners</h2>
+      <p>More creators launch courses. More coaches enter the market. More money flows into education every year. But as the market matures, the winners aren't simply the ones with the best offer. They're the businesses with the systems that convert more visitors, recover more buyers, and increase customer value over time.</p>
+    </div>
+  </div>
+  <div class="slide-meta"><span>02</span><span class="dot"></span><span>15</span></div>
+</section>
+
+<!-- 03 — WHERE GROWTH LEAKS -->
+<section class="slide slide-split flip">
+  <div class="slide-inner">
+    <div class="split-media reveal">
+      <div class="shot"><img src="images/growth-leaks.png" alt="Diagram showing where growth actually leaks: slow funnels, poor follow-up, weak onboarding, disconnected automations, lost momentum before booking"></div>
+    </div>
+    <div class="split-text reveal">
+      <div class="kicker is-problem">WHERE GROWTH ACTUALLY LEAKS</div>
+      <h2>Growth isn't usually lost at the top of the funnel</h2>
+      <p>It's everything that happens after someone clicks. The slow funnels. Poor follow-up. Weak onboarding. Disconnected automations. Prospects who lose momentum before booking. Each one feels small. Together, they quietly become one of the largest costs in the business.</p>
+    </div>
+  </div>
+  <div class="slide-meta"><span>03</span><span class="dot"></span><span>15</span></div>
+</section>
+
+<!-- 04 — INTRO -->
 <section class="slide slide-section">
   <div class="slide-inner">
     <div class="kicker reveal">IT ONLY TAKES 45 SECONDS</div>
-    <h2 class="reveal">Logan, I went through your info setup (funnel) and a few things stood out.</h2>
+    <h2 class="reveal">Barry, I went through your info setup (funnel) and a few things stood out.</h2>
     <p class="reveal" style="margin:20px auto 0">Some are quietly costing you revenue. Others are opportunities that could increase your return without increasing your work.</p>
     <div class="stat-row reveal">
       <div class="stat-chip"><b>3</b> facts found</div>
@@ -152,214 +176,205 @@
       <div class="stat-chip">+ new opportunities ahead</div>
     </div>
   </div>
-  <div class="slide-meta"><span>02</span><span class="dot"></span><span>15</span></div>
-</section>
-
-<!-- 03 — FACT 01 -->
-<section class="slide slide-split">
-  <div class="slide-inner">
-    <div class="split-media reveal">
-      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck1-fact.png" alt="Current offer headline"></div>
-    </div>
-    <div class="split-text reveal">
-      <div class="kicker is-problem">FACT 01</div>
-      <h2>Your Headline Speaks to No One</h2>
-      <p>The current headline makes no promise, targets no one, and gives no reason to keep reading. It doesn't do justice to how good the offer actually is.</p>
-      <ul class="list-terminal is-problem">
-        <li>No precision on who it's for</li>
-        <li>No specific promise or outcome</li>
-        <li>The offer's real value gets buried</li>
-      </ul>
-    </div>
-  </div>
-  <div class="slide-meta"><span>03</span><span class="dot"></span><span>15</span></div>
-</section>
-
-<!-- 04 — FIX 01 -->
-<section class="slide slide-split flip">
-  <div class="slide-inner">
-    <div class="split-media reveal">
-      <div class="shot-wrap">
-        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck1-fix.png" alt="Rewritten offer headline"></div>
-        <div class="badge">after</div>
-      </div>
-    </div>
-    <div class="split-text reveal">
-      <div class="kicker is-solution">FIX 01</div>
-      <h2>Precision Targeting, Real Promise</h2>
-      <p>A headline built around Logan's best-fit ICP, with a clear, specific promise — so the presentation of the offer finally matches how strong the offer itself is.</p>
-      <ul class="list-terminal is-solution">
-        <li>Speaks directly to the ideal buyer</li>
-        <li>Leads with a concrete, believable promise</li>
-        <li>Presentation now matches offer quality</li>
-      </ul>
-    </div>
-  </div>
   <div class="slide-meta"><span>04</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 05 — FACT 02 -->
+<!-- 05 — FACT 01 -->
 <section class="slide slide-split">
   <div class="slide-inner">
     <div class="split-media reveal">
-      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck2-fact.png" alt="Current mobile landing page"></div>
+      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck1-fact.png" alt="BOLT homepage with no dedicated offer page"></div>
     </div>
     <div class="split-text reveal">
-      <div class="kicker is-problem">FACT 02</div>
-      <h2>The Page Fights Its Own Visitors</h2>
-      <p>On mobile, the headline sits below the video and there's no CTA above the fold. The form is buried further down and dumps every question on the visitor at once.</p>
+      <div class="kicker is-problem">FACT 01</div>
+      <h2>Your Highest-Value Offer Deserves Its Own Stage</h2>
+      <p>Instead of giving your highest-value offer a dedicated buying experience, visitors are asked to navigate a broader website that pulls attention in multiple directions before a decision is made.</p>
       <ul class="list-terminal is-problem">
-        <li>No CTA above the fold on mobile</li>
-        <li>Form hidden, asks everything at once</li>
-        <li>Structure works against conversion</li>
+        <li>No dedicated destination for the coaching offer</li>
+        <li>Multiple distractions before taking action</li>
+        <li>Buying momentum is diluted throughout the journey</li>
       </ul>
     </div>
   </div>
   <div class="slide-meta"><span>05</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 06 — FIX 02 -->
+<!-- 06 — FIX 01 -->
 <section class="slide slide-split flip">
   <div class="slide-inner">
     <div class="split-media reveal">
       <div class="shot-wrap">
-        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck2-fix.png" alt="Rebuilt mobile landing page"></div>
+        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck1-fix.png" alt="Dedicated coaching landing page"></div>
         <div class="badge">after</div>
       </div>
     </div>
     <div class="split-text reveal">
-      <div class="kicker is-solution">FIX 02</div>
-      <h2>Mobile-First, One Question at a Time</h2>
-      <p>Headline above the video, a CTA visible without scrolling, and a dedicated one-question-at-a-time form instead of a wall of fields buried in the page.</p>
+      <div class="kicker is-solution">FIX 01</div>
+      <h2>Give Your Flagship Offer Its Own Buying Environment</h2>
+      <p>A dedicated landing page keeps attention focused on one goal: understanding the offer, building confidence, and taking the next step.</p>
       <ul class="list-terminal is-solution">
-        <li>CTA visible above the fold on mobile</li>
-        <li>Dedicated, step-by-step form</li>
-        <li>VSL script kept, ready for A/B testing</li>
+        <li>Dedicated coaching landing page</li>
+        <li>Single conversion goal</li>
+        <li>Stronger buying experience</li>
       </ul>
     </div>
   </div>
   <div class="slide-meta"><span>06</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 07 — FACT 03 (no bumpsells) -->
+<!-- 07 — FACT 02 -->
 <section class="slide slide-split">
   <div class="slide-inner">
     <div class="split-media reveal">
-      <div class="flow">
-        <div class="flow-step"><b>Free Book</b>Checkout</div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step"><b>Nothing</b>No bump, no upsell</div>
-      </div>
+      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck2-fact.png" alt="Generic headline with no clear positioning"></div>
     </div>
     <div class="split-text reveal">
-      <div class="kicker is-problem">FACT 03</div>
-      <h2>The Free Book Funnel Leaves Money on the Table</h2>
-      <p>There's no bumpsell in the free book funnel. Every checkout ends flat, with no attempt to raise average order value in the moment buyers are most engaged.</p>
+      <div class="kicker is-problem">FACT 02</div>
+      <h2>Your Offer Isn't Giving the Right People a Reason to Care</h2>
+      <p>A strong offer should immediately communicate who it's for, the outcome it delivers, and why it's different. Right now, those elements aren't clear enough to create immediate interest.</p>
       <ul class="list-terminal is-problem">
-        <li>No order bump at checkout</li>
-        <li>AOV isn't increasing on any sale</li>
-        <li>Acquisition cost stays higher than it needs to</li>
+        <li>Ideal client isn't clearly defined</li>
+        <li>Outcome isn't immediately understood</li>
+        <li>Positioning lacks differentiation</li>
       </ul>
     </div>
   </div>
   <div class="slide-meta"><span>07</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 08 — FIX 03 -->
+<!-- 08 — FIX 02 -->
 <section class="slide slide-split flip">
   <div class="slide-inner">
     <div class="split-media reveal">
-      <div class="flow">
-        <div class="flow-step"><b>Free Book</b>Checkout</div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step"><b>+ Bump Offer</b>Simple, related add-on</div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step"><b>Lower CAC</b>Higher AOV per buyer</div>
+      <div class="shot-wrap">
+        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck2-fix.png" alt="Repositioned landing page speaking to a specific audience"></div>
+        <div class="badge">after</div>
       </div>
     </div>
     <div class="split-text reveal">
-      <div class="kicker is-solution">FIX 03</div>
-      <h2>A Simple Bump Right at the Yes</h2>
-      <p>Add a simple order bump at checkout to lift AOV immediately, which effectively lowers customer acquisition cost across the whole free book funnel.</p>
+      <div class="kicker is-solution">FIX 02</div>
+      <h2>Position the Offer Around Relevance, Not Information</h2>
+      <p>Lead with a message that helps the right prospects recognize themselves, understand the transformation, and immediately see why this offer deserves their attention.</p>
       <ul class="list-terminal is-solution">
-        <li>One-click bump at the moment of purchase</li>
-        <li>Higher AOV, no extra traffic needed</li>
-        <li>Lower effective CAC across the funnel</li>
+        <li>Speak to a specific audience</li>
+        <li>Lead with a concrete outcome</li>
+        <li>Clarify what makes the offer different</li>
       </ul>
     </div>
   </div>
   <div class="slide-meta"><span>08</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 09 — OPPORTUNITY 01 -->
-<section class="slide slide-section">
+<!-- 09 — FACT 03 -->
+<section class="slide slide-split">
   <div class="slide-inner">
-    <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 01</div>
-    <h2 class="reveal">More Doors to Open</h2>
-    <p class="reveal" style="margin:20px auto 0">Right now there's one path to conversion. Adding webinars and low-ticket products creates more entry points for different buyer readiness levels.</p>
-    <div class="icon-grid reveal">
-      <div class="icon-card"><img src="/assets/icons/webinar-generic.png" alt="Webinar"><span>Webinar</span></div>
+    <div class="split-media reveal">
+      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck3-fact.png" alt="Generic multi-field contact form with no qualification"></div>
+    </div>
+    <div class="split-text reveal">
+      <div class="kicker is-problem">FACT 03</div>
+      <h2>Interested Prospects Aren't Being Guided to the Next Step</h2>
+      <p>Once someone decides to reach out, the journey should continue naturally. Right now, the process creates unnecessary pauses instead of smoothly moving qualified prospects toward a conversation.</p>
+      <ul class="list-terminal is-problem">
+        <li>No qualification before contact</li>
+        <li>Limited context before the call</li>
+        <li>The journey loses momentum after interest is shown</li>
+      </ul>
     </div>
   </div>
   <div class="slide-meta"><span>09</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 10 — OPPORTUNITY 02 -->
-<section class="slide slide-section">
+<!-- 10 — FIX 03 -->
+<section class="slide slide-split flip">
   <div class="slide-inner">
-    <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 02</div>
-    <h2 class="reveal">Expand the Content Footprint</h2>
-    <p class="reveal" style="margin:20px auto 0">Presence is concentrated on one or two channels. Adding X, LinkedIn, and consistent YouTube output compounds reach without paid spend.</p>
-    <div class="icon-grid reveal">
-      <div class="icon-card"><img src="/assets/icons/x.png" alt="X"><span>X</span></div>
-      <div class="icon-card"><img src="/assets/icons/linkedin.png" alt="LinkedIn"><span>LinkedIn</span></div>
-      <div class="icon-card"><img src="/assets/icons/youtube.png" alt="YouTube"><span>YouTube</span></div>
+    <div class="split-media reveal">
+      <div class="shot-wrap">
+        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck3-fix.png" alt="Structured qualification and booking flow"></div>
+        <div class="badge">after</div>
+      </div>
+    </div>
+    <div class="split-text reveal">
+      <div class="kicker is-solution">FIX 03</div>
+      <h2>A Smoother Path From Interest to Conversation</h2>
+      <p>A structured qualification and booking flow helps prospects move naturally to the next step while giving you the context needed for more productive conversations.</p>
+      <ul class="list-terminal is-solution">
+        <li>Short qualification flow</li>
+        <li>Direct transition into booking</li>
+        <li>Better-qualified conversations</li>
+      </ul>
     </div>
   </div>
   <div class="slide-meta"><span>10</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 11 — OPPORTUNITY 03 -->
+<!-- 11 — OPPORTUNITY 01 -->
 <section class="slide slide-section">
   <div class="slide-inner">
-    <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 03</div>
-    <h2 class="reveal">Activate the Email List</h2>
-    <p class="reveal" style="margin:20px auto 0">If there's a list sitting mostly unused, it's a free asset. Systematic nurture and promo sequences can turn it into a recurring revenue channel.</p>
-    <div class="icon-grid reveal">
-      <div class="icon-card"><img src="/assets/icons/gmail.png" alt="Email"><span>Email</span></div>
+    <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 01</div>
+    <h2 class="reveal">Stop Relying on a Single Point of Entry</h2>
+    <p class="reveal" style="margin:20px auto 0">Every prospect has a different level of awareness, trust, and urgency. Offering multiple ways to engage allows more people to enter your ecosystem without changing your core offer.</p>
+    <div class="flow reveal" style="max-width:680px">
+      <div class="flow-step"><b>Different Buyer Types</b>Awareness, trust, urgency</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><b>Multiple Entry Points</b>More ways to engage</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><b>One Core Offer</b>Same destination</div>
     </div>
+    <ul class="list-terminal is-solution reveal" style="text-align:left;max-width:44ch">
+      <li>More consistent lead flow</li>
+      <li>Better fit across different buyer types</li>
+      <li>Higher conversion into premium services</li>
+    </ul>
   </div>
   <div class="slide-meta"><span>11</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 12 — OPPORTUNITY 04 -->
+<!-- 12 — OPPORTUNITY 02 -->
 <section class="slide slide-section">
   <div class="slide-inner">
-    <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 04</div>
-    <h2 class="reveal">A Sharper Positioning Angle</h2>
-    <p class="reveal" style="margin:20px auto 0">A sharper personal angle — like the "dad" angle — differentiates from generic real-estate-guru positioning and builds trust faster.</p>
+    <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 02</div>
+    <h2 class="reveal">Expand the Reach of Your Expertise</h2>
+    <p class="reveal" style="margin:20px auto 0">The expertise is already there. The opportunity is to distribute it more consistently across multiple channels, reaching new audiences and building trust long before the first conversation.</p>
+    <div class="flow reveal" style="max-width:680px">
+      <div class="flow-step"><b>Expertise</b>Already there</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><b>Multiple Channels</b>Consistent distribution</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><b>Compounding Trust</b>Before the first call</div>
+    </div>
+    <ul class="list-terminal is-solution reveal" style="text-align:left;max-width:44ch">
+      <li>Greater visibility with ideal clients</li>
+      <li>More inbound opportunities</li>
+      <li>Authority that compounds over time</li>
+    </ul>
   </div>
   <div class="slide-meta"><span>12</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 13 — OPPORTUNITY 05 -->
+<!-- 13 — OPPORTUNITY 03 -->
 <section class="slide slide-section">
   <div class="slide-inner">
-    <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 05</div>
-    <h2 class="reveal">Build an Ascension Plan</h2>
-    <p class="reveal" style="margin:20px auto 0">There's no clear path from free book buyer to higher-ticket offers. A structured ascension ladder increases lifetime value per lead.</p>
-    <div class="flow reveal" style="max-width:640px">
-      <div class="flow-step"><b>Free Book</b>Entry point</div>
+    <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 03</div>
+    <h2 class="reveal">Turn Your Process Into a System</h2>
+    <p class="reveal" style="margin:20px auto 0">Rather than relying on disconnected steps, create a customer journey where qualification, scheduling, and follow-up work together as one intentional experience.</p>
+    <div class="flow reveal" style="max-width:680px">
+      <div class="flow-step"><b>Qualification</b>Right fit, right context</div>
       <div class="flow-arrow">→</div>
-      <div class="flow-step"><b>Low Ticket</b>Bump / upsell</div>
+      <div class="flow-step"><b>Scheduling</b>Seamless handoff</div>
       <div class="flow-arrow">→</div>
-      <div class="flow-step"><b>Core Offer</b>Mentorship / coaching</div>
+      <div class="flow-step"><b>Follow-Up</b>One connected experience</div>
     </div>
+    <ul class="list-terminal is-solution reveal" style="text-align:left;max-width:44ch">
+      <li>More consistency</li>
+      <li>Better operational efficiency</li>
+      <li>Stronger conversion rates</li>
+    </ul>
   </div>
   <div class="slide-meta"><span>13</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 14 — THE BIG PICTURE (slide fixo, sempre igual) -->
+<!-- 14 — THE BIG PICTURE (slide fixo) -->
 <section class="slide slide-section">
   <div class="slide-inner">
     <div class="kicker reveal">THE BIG PICTURE</div>
@@ -375,7 +390,7 @@
   <div class="slide-meta"><span>14</span><span class="dot"></span><span>15</span></div>
 </section>
 
-<!-- 15 — CLOSING (slide fixo, sempre igual) -->
+<!-- 15 — CLOSING (slide fixo) -->
 <section class="slide slide-closing">
   <div class="slide-inner">
     <div class="kicker reveal">NEXT STEPS</div>
