@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<base href="/decks/barry-hartman/">
-<title>Barry Hartman — Info Operation</title>
+<base href="/decks/catherine-mclernon/">
+<title>Catherine McLernon — Info Operation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
   :root, [data-theme="dark"]{
     --bg:#050506;--surface:#0d0e10;--surface-2:#141519;
     --ink:#f2f4f3;--ink-soft:#b9c1c3;--ink-muted:#767f82;--line:rgba(255,255,255,0.09);
-    --accent-fill:#FEFD27;--accent-text:#FEFD27;--accent-soft:rgba(254,253,39,0.1);
+    --accent-fill:#CFB89F;--accent-text:#CFB89F;--accent-soft:rgba(207,184,159,0.1);
     --danger-fill:#ff5266;--danger-text:#ff5266;--danger-soft:rgba(255,82,102,0.1);
     --shadow-soft:rgba(0,0,0,0.6);--dot-color:#333;--on-accent:#141400;
     --display:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;--sans:'Inter',sans-serif;
@@ -21,7 +21,7 @@
   [data-theme="light"]{
     --bg:#e6e6e6;--surface:#ffffff;--surface-2:#f1f1f1;
     --ink:#14151a;--ink-soft:#4a4d54;--ink-muted:#82858c;--line:rgba(0,0,0,0.1);
-    --accent-fill:#FEFD27;--accent-text:#8a8000;--accent-soft:rgba(138,128,0,0.1);
+    --accent-fill:#CFB89F;--accent-text:#8A7355;--accent-soft:rgba(138,115,85,0.1);
     --danger-fill:#ff5266;--danger-text:#c81f3f;--danger-soft:rgba(200,31,63,0.1);
     --shadow-soft:rgba(0,0,0,0.14);--dot-color:#cfcfcf;--on-accent:#141400;
   }
@@ -55,7 +55,7 @@
   /* cover */
   .slide-cover{align-items:center;text-align:center}
   .slide-cover .slide-inner{display:flex;flex-direction:column;align-items:center}
-  .cover-logo{height:34px;margin-bottom:40px}
+  .cover-logo{height:56px;margin-bottom:40px}
   .slide-cover h1{font-size:clamp(38px,6.5vw,76px);margin-bottom:22px}
   .slide-cover h1 em{color:var(--accent-text);font-style:normal}
   .cover-tag{font-family:var(--mono);font-size:12px;color:var(--ink-muted);letter-spacing:.1em}
@@ -88,9 +88,11 @@
   .list-terminal.is-problem li::before{content:"›";color:var(--danger-text);font-weight:700}
   .list-terminal.is-solution li::before{content:"✓";color:var(--accent-text);font-weight:700}
 
-  .flow{display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}
+  .flow{display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;justify-content:center}
   .flow-step{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;font-family:var(--mono);font-size:13px;color:var(--ink-soft);text-align:center;flex:1;min-width:140px}
   .flow-step b{display:block;font-family:var(--display);font-size:16px;color:var(--ink);margin-bottom:4px;font-weight:600}
+  .flow-step .flow-lines b{margin-bottom:2px}
+  .flow-step img{width:26px;height:26px;object-fit:contain;margin:0 auto 8px;display:block}
   .flow-arrow{color:var(--accent-text);font-size:20px}
 
   /* icon grid */
@@ -122,38 +124,38 @@
 <body>
 
 <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
-<div class="kbd-hint"><kbd>↓</kbd><kbd>↑</kbd> navigate</div>
+<div class="kbd-hint"><kbd id="navDown" style="cursor:pointer">↓</kbd><kbd id="navUp" style="cursor:pointer">↑</kbd> navigate</div>
 
 <!-- 01 — COVER -->
 <section class="slide slide-cover visible">
   <div class="slide-inner">
-    <img src="images/logo.png" alt="Barry Hartman" class="cover-logo reveal">
-    <h1 class="reveal">Barry Hartman<br><em>Info Operation</em></h1>
+    <img src="images/logo.png" alt="She EO logo" class="cover-logo reveal">
+    <h1 class="reveal">Catherine McLernon<br><em>Info Operation</em></h1>
     <div class="cover-tag reveal">· JULY 2026 ·</div>
   </div>
-  <div class="slide-meta"><span>01</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>01</span><span class="dot"></span><span>18</span></div>
 </section>
 
 <!-- 02 — MARKET CONTEXT -->
 <section class="slide slide-split">
   <div class="slide-inner">
     <div class="split-media reveal">
-      <div class="shot"><img src="images/market-growth.png" alt="Global online education market growth statistics"></div>
+      <div class="shot"><img src="/assets/market-context/market-growth.png" alt="Global online education market growth statistics"></div>
     </div>
     <div class="split-text reveal">
-      <div class="kicker">THE ONLINE EDUCATION MARKET KEEPS EXPANDING</div>
+      <div class="kicker is-solution">THE ONLINE EDUCATION MARKET KEEPS EXPANDING</div>
       <h2>Expertise is no longer what separates the winners</h2>
       <p>More creators launch courses. More coaches enter the market. More money flows into education every year. But as the market matures, the winners aren't simply the ones with the best offer. They're the businesses with the systems that convert more visitors, recover more buyers, and increase customer value over time.</p>
     </div>
   </div>
-  <div class="slide-meta"><span>02</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>02</span><span class="dot"></span><span>18</span></div>
 </section>
 
 <!-- 03 — WHERE GROWTH LEAKS -->
 <section class="slide slide-split flip">
   <div class="slide-inner">
     <div class="split-media reveal">
-      <div class="shot"><img src="images/growth-leaks.png" alt="Diagram showing where growth actually leaks: slow funnels, poor follow-up, weak onboarding, disconnected automations, lost momentum before booking"></div>
+      <div class="shot"><img src="/assets/market-context/growth-leaks.png" alt="Diagram showing where growth actually leaks: slow funnels, poor follow-up, weak onboarding, disconnected automations, lost momentum before booking"></div>
     </div>
     <div class="split-text reveal">
       <div class="kicker is-problem">WHERE GROWTH ACTUALLY LEAKS</div>
@@ -161,42 +163,42 @@
       <p>It's everything that happens after someone clicks. The slow funnels. Poor follow-up. Weak onboarding. Disconnected automations. Prospects who lose momentum before booking. Each one feels small. Together, they quietly become one of the largest costs in the business.</p>
     </div>
   </div>
-  <div class="slide-meta"><span>03</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>03</span><span class="dot"></span><span>18</span></div>
 </section>
 
 <!-- 04 — INTRO -->
 <section class="slide slide-section">
   <div class="slide-inner">
-    <div class="kicker reveal">IT ONLY TAKES 45 SECONDS</div>
-    <h2 class="reveal">Barry, I went through your info setup (funnel) and a few things stood out.</h2>
+    <div class="kicker is-solution reveal">IT ONLY TAKES 45 SECONDS</div>
+    <h2 class="reveal">Catherine, I went through your info setup (funnel) and a few things stood out.</h2>
     <p class="reveal" style="margin:20px auto 0">Some are quietly costing you revenue. Others are opportunities that could increase your return without increasing your work.</p>
     <div class="stat-row reveal">
-      <div class="stat-chip"><b>3</b> facts found</div>
-      <div class="stat-chip"><b>3</b> fixes proposed</div>
+      <div class="stat-chip"><b>4</b> facts found</div>
+      <div class="stat-chip"><b>4</b> fixes proposed</div>
       <div class="stat-chip">+ new opportunities ahead</div>
     </div>
   </div>
-  <div class="slide-meta"><span>04</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>04</span><span class="dot"></span><span>18</span></div>
 </section>
 
 <!-- 05 — FACT 01 -->
 <section class="slide slide-split">
   <div class="slide-inner">
     <div class="split-media reveal">
-      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck1-fact.png" alt="BOLT homepage with no dedicated offer page"></div>
+      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck1-fact.png" alt="Current offer headline lacking a strong first impression"></div>
     </div>
     <div class="split-text reveal">
       <div class="kicker is-problem">OBSERVATION 01</div>
-      <h2>Your Highest-Value Offer Deserves Its Own Stage</h2>
-      <p>Instead of giving your highest-value offer a dedicated buying experience, visitors are asked to navigate a broader website that pulls attention in multiple directions before a decision is made.</p>
+      <h2>Your offer has room to create a stronger first impression.</h2>
+      <p>Your methodology is clearly unique, but the first message visitors see could do more to communicate the transformation, the ideal client, and why your approach stands apart.</p>
       <ul class="list-terminal is-problem">
-        <li>No dedicated destination for the coaching offer</li>
-        <li>Multiple distractions before taking action</li>
-        <li>Buying momentum is diluted throughout the journey</li>
+        <li>Opportunity to clarify the desired outcome</li>
+        <li>More specificity around the ideal client</li>
+        <li>Stronger first impression through messaging</li>
       </ul>
     </div>
   </div>
-  <div class="slide-meta"><span>05</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>05</span><span class="dot"></span><span>18</span></div>
 </section>
 
 <!-- 06 — FIX 01 -->
@@ -204,42 +206,42 @@
   <div class="slide-inner">
     <div class="split-media reveal">
       <div class="shot-wrap">
-        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck1-fix.png" alt="Dedicated coaching landing page"></div>
+        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck1-fix.png" alt="Repositioned outcome-first offer messaging"></div>
         <div class="badge">after</div>
       </div>
     </div>
     <div class="split-text reveal">
       <div class="kicker is-solution">RECOMMENDATION 01</div>
-      <h2>Give Your Flagship Offer Its Own Buying Environment</h2>
-      <p>A dedicated landing page keeps attention focused on one goal: understanding the offer, building confidence, and taking the next step.</p>
+      <h2>Refine the way the offer is introduced.</h2>
+      <p>Restructure the opening message so prospects instantly recognize the value of the offer before discovering the methodology behind it.</p>
       <ul class="list-terminal is-solution">
-        <li>Dedicated coaching landing page</li>
-        <li>Single conversion goal</li>
-        <li>Stronger buying experience</li>
+        <li>Outcome-first messaging</li>
+        <li>Sharper positioning</li>
+        <li>Increased engagement</li>
       </ul>
     </div>
   </div>
-  <div class="slide-meta"><span>06</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>06</span><span class="dot"></span><span>18</span></div>
 </section>
 
 <!-- 07 — FACT 02 -->
 <section class="slide slide-split">
   <div class="slide-inner">
     <div class="split-media reveal">
-      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck2-fact.png" alt="Generic headline with no clear positioning"></div>
+      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck2-fact.png" alt="Open calendar with no qualification step before booking"></div>
     </div>
     <div class="split-text reveal">
       <div class="kicker is-problem">OBSERVATION 02</div>
-      <h2>Your Offer Isn't Giving the Right People a Reason to Care</h2>
-      <p>A strong offer should immediately communicate who it's for, the outcome it delivers, and why it's different. Right now, those elements aren't clear enough to create immediate interest.</p>
+      <h2>Your calendar is open before prospects are qualified.</h2>
+      <p>Every sales conversation is an investment of your time. Introducing a simple qualification step beforehand helps ensure those conversations are happening with people who are the right fit.</p>
       <ul class="list-terminal is-problem">
-        <li>Ideal client isn't clearly defined</li>
-        <li>Outcome isn't immediately understood</li>
-        <li>Positioning lacks differentiation</li>
+        <li>Anyone can book a call</li>
+        <li>No qualification before scheduling</li>
+        <li>Time may be spent on low-fit prospects</li>
       </ul>
     </div>
   </div>
-  <div class="slide-meta"><span>07</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>07</span><span class="dot"></span><span>18</span></div>
 </section>
 
 <!-- 08 — FIX 02 -->
@@ -247,42 +249,42 @@
   <div class="slide-inner">
     <div class="split-media reveal">
       <div class="shot-wrap">
-        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck2-fix.png" alt="Repositioned landing page speaking to a specific audience"></div>
+        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck2-fix.png" alt="Application step added before the booking calendar"></div>
         <div class="badge">after</div>
       </div>
     </div>
     <div class="split-text reveal">
       <div class="kicker is-solution">RECOMMENDATION 02</div>
-      <h2>Position the Offer Around Relevance, Not Information</h2>
-      <p>Lead with a message that helps the right prospects recognize themselves, understand the transformation, and immediately see why this offer deserves their attention.</p>
+      <h2>Qualify before you schedule.</h2>
+      <p>Add a short, strategic application before the calendar to filter for better-fit prospects and create more intentional sales conversations.</p>
       <ul class="list-terminal is-solution">
-        <li>Speak to a specific audience</li>
-        <li>Lead with a concrete outcome</li>
-        <li>Clarify what makes the offer different</li>
+        <li>Higher-quality bookings</li>
+        <li>Better use of your time</li>
+        <li>More qualified sales calls</li>
       </ul>
     </div>
   </div>
-  <div class="slide-meta"><span>08</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>08</span><span class="dot"></span><span>18</span></div>
 </section>
 
 <!-- 09 — FACT 03 -->
 <section class="slide slide-split">
   <div class="slide-inner">
     <div class="split-media reveal">
-      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck3-fact.png" alt="Generic multi-field contact form with no qualification"></div>
+      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck3-fact.png" alt="Calendar showing no available booking slots"></div>
     </div>
     <div class="split-text reveal">
       <div class="kicker is-problem">OBSERVATION 03</div>
-      <h2>Interested Prospects Aren't Being Guided to the Next Step</h2>
-      <p>Once someone decides to reach out, the journey should continue naturally. Right now, the process creates unnecessary pauses instead of smoothly moving qualified prospects toward a conversation.</p>
+      <h2>Interested prospects can't take the next step.</h2>
+      <p>When someone is ready to book a call, the experience should be effortless. An unavailable calendar interrupts that momentum and can cause qualified prospects to leave instead of returning later.</p>
       <ul class="list-terminal is-problem">
-        <li>No qualification before contact</li>
-        <li>Limited context before the call</li>
-        <li>The journey loses momentum after interest is shown</li>
+        <li>No available booking slots</li>
+        <li>Momentum is interrupted</li>
+        <li>High-intent opportunities may be lost</li>
       </ul>
     </div>
   </div>
-  <div class="slide-meta"><span>09</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>09</span><span class="dot"></span><span>18</span></div>
 </section>
 
 <!-- 10 — FIX 03 -->
@@ -290,94 +292,164 @@
   <div class="slide-inner">
     <div class="split-media reveal">
       <div class="shot-wrap">
-        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck3-fix.png" alt="Structured qualification and booking flow"></div>
+        <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck3-fix.png" alt="Calendar with open, available booking slots"></div>
         <div class="badge">after</div>
       </div>
     </div>
     <div class="split-text reveal">
       <div class="kicker is-solution">RECOMMENDATION 03</div>
-      <h2>A Smoother Path From Interest to Conversation</h2>
-      <p>A structured qualification and booking flow helps prospects move naturally to the next step while giving you the context needed for more productive conversations.</p>
+      <h2>Keep your booking process always available.</h2>
+      <p>Regularly monitor your scheduling flow to ensure qualified prospects can immediately move forward whenever they're ready.</p>
       <ul class="list-terminal is-solution">
-        <li>Short qualification flow</li>
-        <li>Direct transition into booking</li>
-        <li>Better-qualified conversations</li>
+        <li>Active booking availability</li>
+        <li>Friction-free scheduling</li>
+        <li>More opportunities captured</li>
       </ul>
     </div>
   </div>
-  <div class="slide-meta"><span>10</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>10</span><span class="dot"></span><span>18</span></div>
 </section>
 
-<!-- 11 — OPPORTUNITY 01 -->
+<!-- 11 — FACT 04 -->
+<section class="slide slide-split">
+  <div class="slide-inner">
+    <div class="split-media reveal">
+      <div class="shot"><div class="shot-bar"><span></span><span></span><span></span></div><img src="images/bottleneck4-fact.png" alt="Unstructured WhatsApp conversation with a prospect"></div>
+    </div>
+    <div class="split-text reveal">
+      <div class="kicker is-problem">OBSERVATION 04</div>
+      <h2>Direct messaging works best with a defined process.</h2>
+      <p>WhatsApp can be a powerful conversion channel, but without a structured process, it can quickly become tiring and time-intensive.</p>
+      <ul class="list-terminal is-problem">
+        <li>Conversations rely on your manual work</li>
+        <li>Qualification may vary between prospects</li>
+        <li>Scaling becomes more difficult</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-meta"><span>11</span><span class="dot"></span><span>18</span></div>
+</section>
+
+<!-- 12 — FIX 04 (sem screenshot: flow diagram) -->
+<section class="slide slide-split flip">
+  <div class="slide-inner">
+    <div class="split-media reveal">
+      <div class="flow">
+        <div class="flow-step"><b>Manual Replies</b>One by one, on you</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><b>Structured System</b>Setter team or automation</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><b>Consistent Opportunities</b>Without eating your time</div>
+      </div>
+    </div>
+    <div class="split-text reveal">
+      <div class="kicker is-solution">RECOMMENDATION 04</div>
+      <h2>Give every conversation a clear system.</h2>
+      <p>Whether through a setter team or automation, build a process that turns conversations into consistent opportunities without eating more of your time.</p>
+      <ul class="list-terminal is-solution">
+        <li>Free time for you</li>
+        <li>Better lead management</li>
+        <li>More scalable conversations</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-meta"><span>12</span><span class="dot"></span><span>18</span></div>
+</section>
+
+<!-- 13 — OPPORTUNITY 01 -->
 <section class="slide slide-section">
   <div class="slide-inner">
-    <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 01</div>
-    <h2 class="reveal">Stop Relying on a Single Point of Entry</h2>
-    <p class="reveal" style="margin:20px auto 0">Every prospect has a different level of awareness, trust, and urgency. Offering multiple ways to engage allows more people to enter your ecosystem without changing your core offer.</p>
+    <div class="kicker is-solution reveal">NEXT-LEVEL OPPORTUNITY 01</div>
+    <h2 class="reveal">Create more ways to work with you.</h2>
+    <p class="reveal" style="margin:20px auto 0">Not every prospect is ready to book a call immediately. Introducing webinars, VSLs, workshops, or lower-commitment offers allows more people to enter your world before they're ready for premium coaching.</p>
     <div class="flow reveal" style="max-width:680px">
-      <div class="flow-step"><b>Different Buyer Types</b>Awareness, trust, urgency</div>
+      <div class="flow-step">
+        <div class="flow-lines">
+          <b>Webinar</b>
+          <b>VSL</b>
+          <b>Workshop</b>
+          <b>Low Ticket</b>
+        </div>
+      </div>
       <div class="flow-arrow">→</div>
-      <div class="flow-step"><b>Multiple Entry Points</b>More ways to engage</div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step"><b>One Core Offer</b>Same destination</div>
+      <div class="flow-step"><b>Coaching</b>Premium offer</div>
     </div>
     <ul class="list-terminal is-solution reveal" style="text-align:left;max-width:44ch">
-      <li>More consistent lead flow</li>
-      <li>Better fit across different buyer types</li>
-      <li>Higher conversion into premium services</li>
+      <li>More qualified leads</li>
+      <li>Higher conversion opportunities</li>
+      <li>Better buyer progression</li>
     </ul>
   </div>
-  <div class="slide-meta"><span>11</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>13</span><span class="dot"></span><span>18</span></div>
 </section>
 
-<!-- 12 — OPPORTUNITY 02 -->
+<!-- 14 — OPPORTUNITY 02 -->
 <section class="slide slide-section">
   <div class="slide-inner">
-    <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 02</div>
-    <h2 class="reveal">Expand the Reach of Your Expertise</h2>
-    <p class="reveal" style="margin:20px auto 0">The expertise is already there. The opportunity is to distribute it more consistently across multiple channels, reaching new audiences and building trust long before the first conversation.</p>
-    <div class="flow reveal" style="max-width:680px">
-      <div class="flow-step"><b>Expertise</b>Already there</div>
+    <div class="kicker is-solution reveal">NEXT-LEVEL OPPORTUNITY 02</div>
+    <h2 class="reveal">Expand your reach beyond one platform.</h2>
+    <p class="reveal" style="margin:20px auto 0">Your expertise deserves a wider audience. Repurposing your best content across additional channels increases visibility, builds authority, and creates more consistent inbound opportunities.</p>
+    <div class="flow reveal" style="max-width:760px">
+      <div class="flow-step"><img src="/assets/icons/instagram.png" alt="Instagram"><b>Instagram</b></div>
+      <div class="flow-step"><img src="/assets/icons/x.png" alt="X"><b>X</b></div>
+      <div class="flow-step"><img src="/assets/icons/threads.png" alt="Threads"><b>Threads</b></div>
+      <div class="flow-step"><img src="/assets/icons/linkedin.png" alt="LinkedIn"><b>LinkedIn</b></div>
+      <div class="flow-step"><img src="/assets/icons/youtube.png" alt="YouTube"><b>YouTube</b></div>
       <div class="flow-arrow">→</div>
-      <div class="flow-step"><b>Multiple Channels</b>Consistent distribution</div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step"><b>Compounding Trust</b>Before the first call</div>
+      <div class="flow-step"><b>More Qualified Leads</b></div>
     </div>
     <ul class="list-terminal is-solution reveal" style="text-align:left;max-width:44ch">
-      <li>Greater visibility with ideal clients</li>
-      <li>More inbound opportunities</li>
-      <li>Authority that compounds over time</li>
+      <li>Greater organic reach</li>
+      <li>More inbound leads</li>
+      <li>Stronger brand authority</li>
     </ul>
   </div>
-  <div class="slide-meta"><span>12</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>14</span><span class="dot"></span><span>18</span></div>
 </section>
 
-<!-- 13 — OPPORTUNITY 03 -->
+<!-- 15 — OPPORTUNITY 03 -->
 <section class="slide slide-section">
   <div class="slide-inner">
-    <div class="kicker reveal">NEXT-LEVEL OPPORTUNITY 03</div>
-    <h2 class="reveal">Turn Your Process Into a System</h2>
-    <p class="reveal" style="margin:20px auto 0">Rather than relying on disconnected steps, create a customer journey where qualification, scheduling, and follow-up work together as one intentional experience.</p>
+    <div class="kicker is-solution reveal">NEXT-LEVEL OPPORTUNITY 03</div>
+    <h2 class="reveal">Position the offer around the transformation.</h2>
+    <p class="reveal" style="margin:20px auto 0">Small changes in how the offer is presented can dramatically change how it's perceived.</p>
+    <ul class="list-terminal is-solution reveal" style="text-align:left;max-width:44ch">
+      <li>Stronger first impressions</li>
+      <li>Higher perceived value</li>
+      <li>Better conversion rates</li>
+    </ul>
+  </div>
+  <div class="slide-meta"><span>15</span><span class="dot"></span><span>18</span></div>
+</section>
+
+<!-- 16 — OPPORTUNITY 04 -->
+<section class="slide slide-section">
+  <div class="slide-inner">
+    <div class="kicker is-solution reveal">NEXT-LEVEL OPPORTUNITY 04</div>
+    <h2 class="reveal">Qualify before you commit your time.</h2>
+    <p class="reveal" style="margin:20px auto 0">A structured qualification process ensures your calendar is filled with the right conversations — not simply more conversations.</p>
     <div class="flow reveal" style="max-width:680px">
-      <div class="flow-step"><b>Qualification</b>Right fit, right context</div>
+      <div class="flow-step"><b>Application</b></div>
       <div class="flow-arrow">→</div>
-      <div class="flow-step"><b>Scheduling</b>Seamless handoff</div>
+      <div class="flow-step"><b>Qualification</b></div>
       <div class="flow-arrow">→</div>
-      <div class="flow-step"><b>Follow-Up</b>One connected experience</div>
+      <div class="flow-step"><b>Calendar</b></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><b>Call</b></div>
     </div>
     <ul class="list-terminal is-solution reveal" style="text-align:left;max-width:44ch">
-      <li>More consistency</li>
-      <li>Better operational efficiency</li>
-      <li>Stronger conversion rates</li>
+      <li>Better-qualified calls</li>
+      <li>Higher close rates</li>
+      <li>More efficient use of time</li>
     </ul>
   </div>
-  <div class="slide-meta"><span>13</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>16</span><span class="dot"></span><span>18</span></div>
 </section>
 
-<!-- 14 — THE BIG PICTURE (slide fixo) -->
+<!-- 17 — THE BIG PICTURE (slide fixo) -->
 <section class="slide slide-section">
   <div class="slide-inner">
-    <div class="kicker reveal">THE BIG PICTURE</div>
+    <div class="kicker is-solution reveal">THE BIG PICTURE</div>
     <h2 class="reveal">What I See Is Leverage.</h2>
     <p class="reveal" style="margin:22px auto 0">None of these recommendations are about adding complexity. We want to create leverage.</p>
     <ul class="list-terminal is-solution reveal" style="text-align:left;max-width:44ch">
@@ -387,18 +459,18 @@
     </ul>
     <p class="reveal" style="margin:22px auto 0">That's the opportunity I believe is sitting in front of you.</p>
   </div>
-  <div class="slide-meta"><span>14</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>17</span><span class="dot"></span><span>18</span></div>
 </section>
 
-<!-- 15 — CLOSING (slide fixo) -->
+<!-- 18 — CLOSING (slide fixo) -->
 <section class="slide slide-closing">
   <div class="slide-inner">
-    <div class="kicker reveal">NEXT STEPS</div>
+    <div class="kicker is-solution reveal">NEXT STEPS</div>
     <h2 class="reveal">If this resonates, let's talk.</h2>
     <p class="reveal" style="margin:20px auto 0">I already have a few ideas on how I'd approach this. If you'd like to explore them together, click the button below and we'll take it from there.</p>
     <a href="https://www.instagram.com/direct/t/115335963192552/" target="_blank" rel="noopener" class="cta-btn reveal">Message me on Instagram →</a>
   </div>
-  <div class="slide-meta"><span>15</span><span class="dot"></span><span>15</span></div>
+  <div class="slide-meta"><span>18</span><span class="dot"></span><span>18</span></div>
 </section>
 
 <script>
@@ -438,6 +510,19 @@
       slides[i].scrollIntoView({behavior:'smooth'});
     }
   });
+
+  function goNext(){
+    const i = Math.min(currentIndex()+1, slides.length-1);
+    slides[i].scrollIntoView({behavior:'smooth'});
+  }
+  function goPrev(){
+    const i = Math.max(currentIndex()-1, 0);
+    slides[i].scrollIntoView({behavior:'smooth'});
+  }
+  const navDown = document.getElementById('navDown');
+  const navUp = document.getElementById('navUp');
+  if(navDown) navDown.addEventListener('click', goNext);
+  if(navUp) navUp.addEventListener('click', goPrev);
 </script>
 </body>
 </html>
