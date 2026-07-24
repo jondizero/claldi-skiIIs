@@ -186,18 +186,6 @@ Sempre salve o resultado em `/mnt/user-data/outputs/decks/{client-slug}/` (slug 
 
 O usuário não usa terminal/git — o fluxo de publicação é 100% pelo navegador (arrastar pasta no "Add file → Upload files" do GitHub). Ver `references/deploy-guide.md` pro passo a passo completo, e mencione esse arquivo se o usuário perguntar como publicar.
 
-## Painel de controle (protegido por login)
-
-O painel vive em `/panel` (não é um arquivo estático — é uma Vercel Function em `api/panel.js`, protegida por HTTP Basic Auth, mapeada via `vercel.json`). Arquivos de referência: `references/panel-auth/api/panel.js` e `references/panel-auth/vercel.json`.
-
-**Toda vez que essa skill gerar um deck novo, adicione uma entrada no array `DECKS` dentro de `api/panel.js`** (não é mais um `decks.json` separado — os dados ficam embutidos na própria função, pra nunca ficarem públicos/acessíveis fora do login):
-```js
-{ client: "Nome do Cliente", slug: "nome-do-cliente", date: "AAAA-MM-DD", color: "#hexcode", status: "Sent" }
-```
-Entregue o `api/panel.js` inteiro atualizado (é só um arquivo, o usuário substitui o antigo). O campo `status` pode ser editado manualmente depois (Sent / Replied / Won / Pending).
-
-Credenciais (`PANEL_USER` / `PANEL_PASS`) são configuradas uma única vez nas Environment Variables do projeto no site do Vercel (sem terminal) — não ficam no código.
-
 ## O que essa skill NÃO faz
 
 - Não escreve a copy de vendas do produto do cliente (isso é outra skill/trabalho)
