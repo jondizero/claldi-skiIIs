@@ -13,6 +13,25 @@ lead — é uma referência de linguagem e estrutura, não uma lista obrigatóri
 Nem todo bottleneck/opportunity abaixo aparece em todo deck; a escolha de
 quais usar depende do que foi de fato observado no funil daquele lead.
 
+## Regra crítica de classificação: Bottleneck vs. Opportunity
+
+Antes de escrever qualquer slide, classifique cada achado do research corretamente — essa distinção já causou erro real num teste:
+
+- **Bottleneck (Observation → Recommendation)** = algo **quebrado, morto, ou gerando silêncio real**. Um link que não abre. Uma pergunta que nunca é respondida. Um passo que devia continuar e simplesmente para. A prova é técnica/factual, não uma opinião de gosto.
+- **Opportunity** = um mecanismo que **já funciona**, mas só existe de uma forma / um canal. Captar demanda só por DM manual, por exemplo, **não é um Bottleneck** — funciona, só que é limitado a um canal só. Isso é matéria-prima pra uma Opportunity de diversificação ("Capture demand in more than one way"), nunca um Observation dizendo pra "consertar".
+
+Teste rápido: se a resposta certa for "conserta isso", é Bottleneck. Se a resposta certa for "isso já funciona, mas dá pra ter mais de um jeito/canal", é Opportunity.
+
+## Cobertura de formatos de entrada (pra "Capture demand in more than one way")
+
+Ao decidir quais Entry Point Examples indicar (webinar / VSL / low ticket), a regra é sempre **indicar o que falta, não o que já existe**:
+- Lead não tem nenhum dos 3 → indique os 3.
+- Lead já tem 1 (ex: só VSL) → indique os outros 2.
+- Lead já tem 2 → indique só o que falta.
+- Lead já tem os 3 → essa opportunity não se aplica; não force a inclusão.
+
+Registre no dossiê quais formatos o lead já tem, pra essa conta já vir pronta na hora de perguntar ao usuário quais exemplos incluir.
+
 ## Biblioteca de Bottlenecks (Observation → Recommendation)
 
 **1. Silêncio pós-ação (o mais recorrente — aparece em quase todo deck)**
