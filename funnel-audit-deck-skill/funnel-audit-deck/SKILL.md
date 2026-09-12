@@ -1,10 +1,5 @@
 ---
 name: audit-prospect
-description: "Gera um deck de slides HTML (auditoria de funil \"problema → solução\") pra apresentar/enviar a um prospect ou cliente, através de uma árvore de perguntas curtas. Use sempre que o usuário disser \"/audit-prospect\", pedir pra montar uma \"auditoria de funil\", \"funnel audit deck\", ou pedir pra transformar uma lista de bottlenecks/correções num deck de slides HTML pra deploy no Vercel. Não escreve copy de vendas do produto do cliente — escreve a copy da PRÓPRIA auditoria (a apresentação que o usuário vai mandar pro prospect)."
----
-
----
-name: audit-prospect
 description: Gera um deck de slides HTML (auditoria de funil "problema → solução") pra apresentar/enviar a um prospect ou cliente, através de uma árvore de perguntas curtas. Use sempre que o usuário disser "/audit-prospect", pedir pra montar uma "auditoria de funil", "funnel audit deck", ou pedir pra transformar uma lista de bottlenecks/correções num deck de slides HTML pra deploy no Vercel. Não escreve copy de vendas do produto do cliente — escreve a copy da PRÓPRIA auditoria (a apresentação que o usuário vai mandar pro prospect).
 ---
 
