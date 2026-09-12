@@ -1,5 +1,10 @@
 ---
-name: funnel-audit-deck
+name: audit-prospect
+description: "Gera um deck de slides HTML (auditoria de funil \"problema → solução\") pra apresentar/enviar a um prospect ou cliente, através de uma árvore de perguntas curtas. Use sempre que o usuário disser \"/audit-prospect\", pedir pra montar uma \"auditoria de funil\", \"funnel audit deck\", ou pedir pra transformar uma lista de bottlenecks/correções num deck de slides HTML pra deploy no Vercel. Não escreve copy de vendas do produto do cliente — escreve a copy da PRÓPRIA auditoria (a apresentação que o usuário vai mandar pro prospect)."
+---
+
+---
+name: audit-prospect
 description: Gera um deck de slides HTML (auditoria de funil "problema → solução") pra apresentar/enviar a um prospect ou cliente, através de uma árvore de perguntas curtas. Use sempre que o usuário disser "/audit-prospect", pedir pra montar uma "auditoria de funil", "funnel audit deck", ou pedir pra transformar uma lista de bottlenecks/correções num deck de slides HTML pra deploy no Vercel. Não escreve copy de vendas do produto do cliente — escreve a copy da PRÓPRIA auditoria (a apresentação que o usuário vai mandar pro prospect).
 ---
 
@@ -14,6 +19,8 @@ Conduz o usuário por uma árvore de perguntas curtas (uma de cada vez) e gera c
 Confira `assets/icons/` — já existe uma bibliotequinha de ícones genéricos de plataforma (gmail, discord, instagram, x, threads, youtube, linkedin, meta, webinar-generic, free-training-generic). Nunca peça pro usuário re-upload desses; use direto se alguma "opportunity" mencionar uma dessas plataformas. Só peça upload de ícone novo se for uma plataforma que ainda não está na pasta.
 
 Confira também `assets/market-context/` — tem as duas imagens fixas dos slides de Market Context / Where Growth Leaks (ver seção 4b abaixo): `market-growth.png` e `growth-leaks.png`. São genéricas (não têm dado específico de cliente), reaproveitadas em todo deck.
+
+Confira também `templates/` (`webinar-master.html`, `webinar-master-2.html`, `vsl-master.html`, `lowticket-master.html`) e `templates/references/headline-vault.md` — usados pelo módulo opcional "Entry Point Examples" (ver seção 6b-bis abaixo). Nunca regenere esses templates do zero; copie como ponto de partida, do mesmo jeito que `gar-capital-example.html` é usado pro deck em si.
 
 **Importante sobre caminhos de imagem** — existem duas categorias, e cada uma usa um tipo de caminho diferente:
 - **Screenshots específicos do cliente** (prints de observation/recommendation, logo do cliente): ficam em `images/` dentro da própria pasta do deck, e são referenciados com caminho **relativo**: `src="images/nome-do-arquivo.png"`.
@@ -87,6 +94,15 @@ Copy fixa — não pergunte nem customize por cliente.
 - Pra cada opportunity, pergunte só o headline + 1 frase de contexto. Ícones vêm de `assets/icons/` quando aplicável (ex: opportunity sobre redes sociais → puxa os ícones relevantes automaticamente, sem perguntar).
 - O kicker desses slides é **"NEXT-LEVEL OPPORTUNITY N"** (não apenas "OPPORTUNITY N") — sempre com `is-solution` (ver "Regra de branding" acima).
 
+**6b-bis. Entry Point Examples (condicional — só dispara com uma opportunity específica):**
+- **Gatilho exato:** só pergunte isso se o headline da opportunity que acabou de ser adicionada for literalmente **"Capture demand in more than one way"** (a opportunity fixa/reutilizável de diversificar pontos de entrada). Qualquer outra opportunity não dispara esse módulo.
+- Quando disparar, pergunte: `"Which entry point examples do you want to include? (Webinar / VSL / Low Ticket / All)"`
+- Gere **só** os tipos escolhidos (nunca gere os 3 por padrão):
+  1. Copie o template mestre correspondente de `templates/` como ponto de partida (`webinar-master.html` ou `webinar-master-2.html` para Webinar — se ambos existirem e o usuário não especificou estilo, pergunte qual dos dois; `vsl-master.html` para VSL; `lowticket-master.html` para Low Ticket).
+  2. Gere o headline/subheadline/copy do corpo com base no dossiê do lead já levantado na conversa (oferta, público, prova social, awareness level unaware/aware) — **nunca copy fixa**. Use `templates/references/headline-vault.md` só como referência de *estrutura/fórmula* por categoria (ex: "How [público] are [resultado] without [objeções] (using [mecanismo])"), encaixando os dados reais do lead — nunca reaproveite a frase de outro nicho literalmente.
+  3. Troque as CSS custom properties de `:root` (cor de destaque etc.) pela Brand Color do cliente informada no intake; troque o placeholder de logo pela logo do cliente se foi enviada.
+  4. Anexe o(s) HTML(s) gerado(s) como um modal "Entry Point Examples" no próprio slide dessa opportunity — uma aba por template escolhido, cada aba carregando o HTML completo ao vivo via `<iframe srcdoc="...">` (mesmo padrão usado no deck de referência do Noah Huff). Se só um tipo foi escolhido, não precisa de abas — abre o preview direto.
+
 **6c. The Big Picture (slide fixo, sempre depois da última opportunity):**
 Depois do loop de opportunities, sempre insira um slide `slide-section` fixo, antes do fechamento, com este conteúdo (não pergunte — é padrão):
 - kicker: `THE BIG PICTURE` (classe `is-solution`)
@@ -97,6 +113,12 @@ Depois do loop de opportunities, sempre insira um slide `slide-section` fixo, an
   - `Leverage that turns buyers into long-term customers`
   - `Leverage that makes future growth easier than past growth`
 - parágrafo final: `That's the opportunity I believe is sitting in front of you.`
+
+**Módulo opcional: Pre-Call Email Sequence (sob demanda, sem gatilho fixo)**
+- Não pergunte proativamente por isso e não associe a nenhuma Recommendation específica por padrão — o usuário pede quando quiser, em qualquer ponto do processo (ex: "inclui os emails", "adiciona os pre-call emails").
+- É tudo ou nada: sempre os **3 emails juntos**, nunca um subconjunto.
+- Reescreva os 3 com base no dossiê do lead já levantado (nome via token `{{first_name}}`, oferta, provas sociais, objeções específicas do nicho) — mantendo a mesma função/estrutura de cada email da sequência original (ex: email 1 = reforço da decisão, email 2 = prova social, email 3 = lembrete + redução de fricção pré-call), mas nunca a copy literal de outro cliente.
+- Anexe como um modal "Pre-Call Email Sequence" na Recommendation que o usuário indicar. Se ele não indicar qual, pergunte a qual Recommendation vincular antes de gerar.
 
 Depois de tudo respondido, confirme um resumo curto (nome do cliente, nº de bottlenecks, nº de opportunities) antes de gerar o HTML final. **Não pergunte pelo texto de fechamento** — o slide de CTA final é sempre fixo (ver item 10 em "Como montar o HTML").
 
@@ -188,6 +210,6 @@ O usuário não usa terminal/git — o fluxo de publicação é 100% pelo navega
 
 ## O que essa skill NÃO faz
 
-- Não escreve a copy de vendas do produto do cliente (isso é outra skill/trabalho)
+- Não escreve a copy de vendas de produção do cliente pros slides do deck em si (isso é outra skill/trabalho). **Exceção:** o módulo opcional "Entry Point Examples" (seção 6b-bis) gera copy de página de exemplo (webinar/VSL/low-ticket) como demonstração da oportunidade — é copy de exemplo pra ilustrar o que daria pra construir, não a copy final de produção.
 - Não tira os screenshots — o usuário sobe prontos, nomeados por bottleneck
 - Não decide branding além da cor de destaque informada
