@@ -52,6 +52,7 @@ Antes do Intake, se o usuário trouxer **inputs brutos** sobre o lead (link do f
 Como fazer o research a partir dos inputs brutos:
 - **Link do funil / bio**: use `web_fetch` pra abrir a(s) página(s) reais do funil do lead e ler estrutura, copy, oferta, prova social direto do HTML — é conteúdo público normal, sem necessidade de scraping.
 - **Prints do Instagram** (bio, grid, destaques): analise as imagens enviadas pra extrair paleta de cor, tom de voz, tipo de oferta, sinais de awareness (já roda ads? já vende o formato recomendado?).
+- **Auditoria de link (checklist obrigatório):** siga o link da bio do Instagram até o fim, e abra a descrição do **vídeo mais recente** do YouTube (não precisa passar por todo o canal — o mais recente já é suficiente) atrás de qualquer link (Calendly, site, oferta). Teste se o link realmente abre. Um link morto/quebrado é um Observation forte — prova técnica e indiscutível, não uma opinião.
 - **Nunca automatize scraping direto do Instagram** (bot/API não-oficial) — os prints enviados pelo usuário + o fetch do funil público já cobrem o que é preciso.
 
 Com isso, gere e salve `dossier.md` em `/mnt/user-data/outputs/decks/{client-slug}/dossier.md`, registrando:
@@ -59,8 +60,10 @@ Com isso, gere e salve `dossier.md` em `/mnt/user-data/outputs/decks/{client-slu
 - Público-alvo
 - Prova social disponível (depoimentos, números, autoridade)
 - Nível de awareness (unaware/aware — unaware nunca vendeu o formato do funil recomendado e precisa ser educado sobre o conceito; aware já roda algo parecido e precisa ser convencido do mecanismo/diferencial)
-- O que o funil atual do lead já tem vs. não tem (ex: já tem VSL boa mas não tem webinar; já nutre por email mas não qualifica orçamento) — isso é o que decide quais bottlenecks da biblioteca (`references/evaluation-framework.md`) realmente se aplicam, e quais tipos de Entry Point Example fazem sentido oferecer
+- **Quais dos 3 formatos de entrada (Webinar / VSL / Low Ticket) o lead já tem hoje** — isso decide o que indicar na opportunity "Capture demand in more than one way" (ver regra de cobertura em `references/evaluation-framework.md`: sempre indicar o que falta, nunca o que já existe)
 - Cor de marca / tom visual observado, se identificável
+
+**Antes de listar bottlenecks, classifique cada achado** usando a regra em `references/evaluation-framework.md` ("Regra crítica de classificação"): um mecanismo que já funciona mas só existe num canal (ex: captação só por DM) não é Bottleneck — é Opportunity de diversificação. Bottleneck é reservado pra algo quebrado, morto, ou com silêncio real.
 
 Se o usuário não trouxer nenhum input de research (for direto pro Intake com a lista de bottlenecks pronta), pule esse passo — o dossiê é opcional, não bloqueia o fluxo normal.
 
@@ -114,7 +117,7 @@ Copy fixa — não pergunte nem customize por cliente.
 
 **6b-bis. Entry Point Examples (condicional — só dispara com uma opportunity específica):**
 - **Gatilho exato:** só pergunte isso se o headline da opportunity que acabou de ser adicionada for literalmente **"Capture demand in more than one way"** (a opportunity fixa/reutilizável de diversificar pontos de entrada). Qualquer outra opportunity não dispara esse módulo.
-- Quando disparar, pergunte: `"Which entry point examples do you want to include? (Webinar / VSL / Low Ticket / All)"`
+- Quando disparar, confira no `dossier.md` quais formatos o lead já tem (ver "Passo 0"), e pergunte já sugerindo o que falta, seguindo a regra de cobertura em `references/evaluation-framework.md`: `"Which entry point examples do you want to include? Based on the dossier, [lead] doesn't have [formatos que faltam] yet — want me to build those? (or pick specific ones: Webinar / VSL / Low Ticket)"`. Se não houver dossiê, pergunte sem sugestão: `"Which entry point examples do you want to include? (Webinar / VSL / Low Ticket / All)"`.
 - Gere **só** os tipos escolhidos (nunca gere os 3 por padrão):
   1. Copie o template mestre correspondente de `templates/` como ponto de partida (`webinar-master.html` ou `webinar-master-2.html` para Webinar — se ambos existirem e o usuário não especificou estilo, pergunte qual dos dois; `vsl-master.html` para VSL; `lowticket-master.html` para Low Ticket).
   2. Gere o headline/subheadline/copy do corpo com base no `dossier.md` do lead (ver "Passo 0" acima) — ou, se não existir dossiê salvo, com base no que já foi levantado na conversa. **Nunca copy fixa.** Use `templates/references/headline-vault.md` só como referência de *estrutura/fórmula* por categoria (ex: "How [público] are [resultado] without [objeções] (using [mecanismo])"), encaixando os dados reais do lead — nunca reaproveite a frase de outro nicho literalmente.
