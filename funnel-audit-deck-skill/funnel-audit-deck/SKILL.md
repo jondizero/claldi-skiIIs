@@ -52,7 +52,14 @@ Exemplo: `<div class="kicker reveal">NEXT STEPS</div>` → `<div class="kicker i
 
 ## Passo 0: Dossiê do lead (research — antes da árvore de perguntas)
 
-Antes do Intake, se o usuário trouxer dados de research sobre o lead (link do funil real, handle do Instagram, prints, nome do programa), compile isso num arquivo `dossier.md` salvo em `/mnt/user-data/outputs/decks/{client-slug}/dossier.md`. O dossiê registra:
+Antes do Intake, se o usuário trouxer **inputs brutos** sobre o lead (link do funil real, handle do Instagram, prints de tela, nome do programa), é a skill quem faz o research e monta o dossiê — não peça pro usuário entregar isso já compilado/analisado.
+
+Como fazer o research a partir dos inputs brutos:
+- **Link do funil / bio**: use `web_fetch` pra abrir a(s) página(s) reais do funil do lead e ler estrutura, copy, oferta, prova social direto do HTML — é conteúdo público normal, sem necessidade de scraping.
+- **Prints do Instagram** (bio, grid, destaques): analise as imagens enviadas pra extrair paleta de cor, tom de voz, tipo de oferta, sinais de awareness (já roda ads? já vende o formato recomendado?).
+- **Nunca automatize scraping direto do Instagram** (bot/API não-oficial) — os prints enviados pelo usuário + o fetch do funil público já cobrem o que é preciso.
+
+Com isso, gere e salve `dossier.md` em `/mnt/user-data/outputs/decks/{client-slug}/dossier.md`, registrando:
 - Oferta (o que vende, formato, faixa de preço se souber)
 - Público-alvo
 - Prova social disponível (depoimentos, números, autoridade)
@@ -60,7 +67,7 @@ Antes do Intake, se o usuário trouxer dados de research sobre o lead (link do f
 - O que o funil atual do lead já tem vs. não tem (ex: já tem VSL boa mas não tem webinar; já nutre por email mas não qualifica orçamento) — isso é o que decide quais bottlenecks da biblioteca (`references/evaluation-framework.md`) realmente se aplicam, e quais tipos de Entry Point Example fazem sentido oferecer
 - Cor de marca / tom visual observado, se identificável
 
-Se o usuário não trouxer research (for direto pro Intake com a lista de bottlenecks pronta), pule esse passo — o dossiê é opcional, não bloqueia o fluxo normal.
+Se o usuário não trouxer nenhum input de research (for direto pro Intake com a lista de bottlenecks pronta), pule esse passo — o dossiê é opcional, não bloqueia o fluxo normal.
 
 O dossiê, quando existe, é a fonte de dados usada pelos módulos "Entry Point Examples" e "Pre-Call Email Sequence" (ver seções abaixo) — gerar copy pra esses módulos sem dossiê significa perguntar os dados na hora, nunca inventar genérico.
 
