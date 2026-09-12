@@ -22,6 +22,8 @@ Confira também `assets/market-context/` — tem as duas imagens fixas dos slide
 
 Confira também `templates/` (`webinar-master.html`, `webinar-master-2.html`, `vsl-master.html`, `lowticket-master.html`) e `templates/references/headline-vault.md` — usados pelo módulo opcional "Entry Point Examples" (ver seção 6b-bis abaixo). Nunca regenere esses templates do zero; copie como ponto de partida, do mesmo jeito que `gar-capital-example.html` é usado pro deck em si.
 
+Confira também `references/evaluation-framework.md` — biblioteca dos padrões de bottleneck/opportunity que se repetem entre os decks já feitos (sintetizada a partir de 5 decks reais). Use como referência de linguagem/estrutura ao redigir Observation/Recommendation e Opportunities, mas a escolha do que é relevante pro lead atual continua sendo do usuário.
+
 **Importante sobre caminhos de imagem** — existem duas categorias, e cada uma usa um tipo de caminho diferente:
 - **Screenshots específicos do cliente** (prints de observation/recommendation, logo do cliente): ficam em `images/` dentro da própria pasta do deck, e são referenciados com caminho **relativo**: `src="images/nome-do-arquivo.png"`.
 - **Assets genéricos e compartilhados** (ícones de `assets/icons/` E as imagens de `assets/market-context/`): NUNCA copie pra dentro da pasta `images/` do cliente. Referencie com caminho **absoluto a partir da raiz do site**: `src="/assets/icons/gmail.png"` ou `src="/assets/market-context/market-growth.png"`. Isso funciona porque o Vercel serve o repositório inteiro a partir da raiz, e essas pastas são compartilhadas por todos os clientes (upload único, feito uma vez no repositório — ver `references/deploy-guide.md`).
@@ -47,6 +49,20 @@ Todo `.kicker` do template só fica na cor de destaque (amarelo/accent) se tiver
 - Kickers `RECOMMENDATION N` continuam `is-problem` (vermelho, correto)
 
 Exemplo: `<div class="kicker reveal">NEXT STEPS</div>` → `<div class="kicker is-solution reveal">NEXT STEPS</div>`
+
+## Passo 0: Dossiê do lead (research — antes da árvore de perguntas)
+
+Antes do Intake, se o usuário trouxer dados de research sobre o lead (link do funil real, handle do Instagram, prints, nome do programa), compile isso num arquivo `dossier.md` salvo em `/mnt/user-data/outputs/decks/{client-slug}/dossier.md`. O dossiê registra:
+- Oferta (o que vende, formato, faixa de preço se souber)
+- Público-alvo
+- Prova social disponível (depoimentos, números, autoridade)
+- Nível de awareness (unaware/aware — unaware nunca vendeu o formato do funil recomendado e precisa ser educado sobre o conceito; aware já roda algo parecido e precisa ser convencido do mecanismo/diferencial)
+- O que o funil atual do lead já tem vs. não tem (ex: já tem VSL boa mas não tem webinar; já nutre por email mas não qualifica orçamento) — isso é o que decide quais bottlenecks da biblioteca (`references/evaluation-framework.md`) realmente se aplicam, e quais tipos de Entry Point Example fazem sentido oferecer
+- Cor de marca / tom visual observado, se identificável
+
+Se o usuário não trouxer research (for direto pro Intake com a lista de bottlenecks pronta), pule esse passo — o dossiê é opcional, não bloqueia o fluxo normal.
+
+O dossiê, quando existe, é a fonte de dados usada pelos módulos "Entry Point Examples" e "Pre-Call Email Sequence" (ver seções abaixo) — gerar copy pra esses módulos sem dossiê significa perguntar os dados na hora, nunca inventar genérico.
 
 ## Árvore de perguntas
 
@@ -99,7 +115,7 @@ Copy fixa — não pergunte nem customize por cliente.
 - Quando disparar, pergunte: `"Which entry point examples do you want to include? (Webinar / VSL / Low Ticket / All)"`
 - Gere **só** os tipos escolhidos (nunca gere os 3 por padrão):
   1. Copie o template mestre correspondente de `templates/` como ponto de partida (`webinar-master.html` ou `webinar-master-2.html` para Webinar — se ambos existirem e o usuário não especificou estilo, pergunte qual dos dois; `vsl-master.html` para VSL; `lowticket-master.html` para Low Ticket).
-  2. Gere o headline/subheadline/copy do corpo com base no dossiê do lead já levantado na conversa (oferta, público, prova social, awareness level unaware/aware) — **nunca copy fixa**. Use `templates/references/headline-vault.md` só como referência de *estrutura/fórmula* por categoria (ex: "How [público] are [resultado] without [objeções] (using [mecanismo])"), encaixando os dados reais do lead — nunca reaproveite a frase de outro nicho literalmente.
+  2. Gere o headline/subheadline/copy do corpo com base no `dossier.md` do lead (ver "Passo 0" acima) — ou, se não existir dossiê salvo, com base no que já foi levantado na conversa. **Nunca copy fixa.** Use `templates/references/headline-vault.md` só como referência de *estrutura/fórmula* por categoria (ex: "How [público] are [resultado] without [objeções] (using [mecanismo])"), encaixando os dados reais do lead — nunca reaproveite a frase de outro nicho literalmente.
   3. Troque as CSS custom properties de `:root` (cor de destaque etc.) pela Brand Color do cliente informada no intake; troque o placeholder de logo pela logo do cliente se foi enviada.
   4. Anexe o(s) HTML(s) gerado(s) como um modal "Entry Point Examples" no próprio slide dessa opportunity — uma aba por template escolhido, cada aba carregando o HTML completo ao vivo via `<iframe srcdoc="...">` (mesmo padrão usado no deck de referência do Noah Huff). Se só um tipo foi escolhido, não precisa de abas — abre o preview direto.
 
@@ -117,7 +133,7 @@ Depois do loop de opportunities, sempre insira um slide `slide-section` fixo, an
 **Módulo opcional: Pre-Call Email Sequence (sob demanda, sem gatilho fixo)**
 - Não pergunte proativamente por isso e não associe a nenhuma Recommendation específica por padrão — o usuário pede quando quiser, em qualquer ponto do processo (ex: "inclui os emails", "adiciona os pre-call emails").
 - É tudo ou nada: sempre os **3 emails juntos**, nunca um subconjunto.
-- Reescreva os 3 com base no dossiê do lead já levantado (nome via token `{{first_name}}`, oferta, provas sociais, objeções específicas do nicho) — mantendo a mesma função/estrutura de cada email da sequência original (ex: email 1 = reforço da decisão, email 2 = prova social, email 3 = lembrete + redução de fricção pré-call), mas nunca a copy literal de outro cliente.
+- Reescreva os 3 com base no `dossier.md` do lead (ver "Passo 0" acima) — ou, se não existir dossiê salvo, com base no que já foi levantado na conversa (nome via token `{{first_name}}`, oferta, provas sociais, objeções específicas do nicho) — mantendo a mesma função/estrutura de cada email da sequência original (ex: email 1 = reforço da decisão, email 2 = prova social, email 3 = lembrete + redução de fricção pré-call), mas nunca a copy literal de outro cliente.
 - Anexe como um modal "Pre-Call Email Sequence" na Recommendation que o usuário indicar. Se ele não indicar qual, pergunte a qual Recommendation vincular antes de gerar.
 
 Depois de tudo respondido, confirme um resumo curto (nome do cliente, nº de bottlenecks, nº de opportunities) antes de gerar o HTML final. **Não pergunte pelo texto de fechamento** — o slide de CTA final é sempre fixo (ver item 10 em "Como montar o HTML").
