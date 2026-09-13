@@ -53,6 +53,7 @@ Como fazer o research a partir dos inputs brutos:
 - **Link do funil / bio**: use `web_fetch` pra abrir a(s) página(s) reais do funil do lead e ler estrutura, copy, oferta, prova social direto do HTML — é conteúdo público normal, sem necessidade de scraping.
 - **Prints do Instagram** (bio, grid, destaques): analise as imagens enviadas pra extrair paleta de cor, tom de voz, tipo de oferta, sinais de awareness (já roda ads? já vende o formato recomendado?).
 - **Auditoria de link (checklist obrigatório):** siga o link da bio do Instagram até o fim, e abra a descrição do **vídeo mais recente** do YouTube (não precisa passar por todo o canal — o mais recente já é suficiente) atrás de qualquer link (Calendly, site, oferta). Teste se o link realmente abre. Um link morto/quebrado é um Observation forte — prova técnica e indiscutível, não uma opinião.
+- **Limitação conhecida — X/Twitter e Instagram bloqueiam fetch automatizado** (retornam `ROBOTS_DISALLOWED`). Isso significa que o link na bio e os links dentro de posts/pinned tweets **não são visíveis** via `web_fetch`/`web_search` sozinhos — o que aparece no research é só o que já está indexado por buscadores (bio-texto, trechos de posts específicos), não a página renderizada de verdade. **Nunca preencha o dossiê como se essa parte tivesse sido checada quando não foi** — registre explicitamente uma linha tipo "Link da bio do X: não verificado — plataforma bloqueia acesso automatizado" em vez de omitir silenciosamente. Pra fechar essa lacuna de verdade, peça print pro usuário ou sugira usar o Claude in Chrome (navegação assistida, contorna o bloqueio de bot porque é uma sessão de navegador real).
 - **Nunca automatize scraping direto do Instagram** (bot/API não-oficial) — os prints enviados pelo usuário + o fetch do funil público já cobrem o que é preciso.
 
 Com isso, gere e salve `dossier.md` em `/mnt/user-data/outputs/decks/{client-slug}/dossier.md`, registrando:
@@ -62,6 +63,7 @@ Com isso, gere e salve `dossier.md` em `/mnt/user-data/outputs/decks/{client-slu
 - Nível de awareness (unaware/aware — unaware nunca vendeu o formato do funil recomendado e precisa ser educado sobre o conceito; aware já roda algo parecido e precisa ser convencido do mecanismo/diferencial)
 - **Quais dos 3 formatos de entrada (Webinar / VSL / Low Ticket) o lead já tem hoje** — isso decide o que indicar na opportunity "Capture demand in more than one way" (ver regra de cobertura em `references/evaluation-framework.md`: sempre indicar o que falta, nunca o que já existe)
 - Cor de marca / tom visual observado, se identificável
+- **Lacunas de research** — qualquer fonte que não pôde ser verificada (ex: link da bio do X/Instagram bloqueado por robots.txt) entra aqui explicitamente, nunca é omitida silenciosamente
 
 **Antes de listar bottlenecks, classifique cada achado** usando a regra em `references/evaluation-framework.md` ("Regra crítica de classificação"): um mecanismo que já funciona mas só existe num canal (ex: captação só por DM) não é Bottleneck — é Opportunity de diversificação. Bottleneck é reservado pra algo quebrado, morto, ou com silêncio real.
 
