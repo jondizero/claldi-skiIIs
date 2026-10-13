@@ -7,7 +7,7 @@ description: Gera um deck de slides HTML (auditoria de funil "problema → solu�
 
 ## O que essa skill faz
 
-Conduz o usuário por uma árvore de perguntas curtas (uma de cada vez) e gera como output um deck de slides em HTML puro (scroll-snap, sem dependências além de Google Fonts), pronto pra push num repo GitHub e deploy no Vercel. Reaproveita o template validado com a GAR Capital em `references/gar-capital-example.html` — **copie esse arquivo como ponto de partida e edite**, nunca regenere o CSS/JS do zero.
+Conduz o usuário por uma árvore de perguntas curtas (uma de cada vez) e gera como output um deck de slides em HTML puro (scroll-snap, sem dependências além de Google Fonts), pronto pra push num repo GitHub e deploy no Vercel. Usa como template-base a estrutura visual atual do deck Nick Fowler em `references/nick-fowler-example.html` — **copie esse arquivo como ponto de partida e edite**, nunca regenere o CSS/JS do zero. Preserve o sistema visual, os componentes, modais, diagramas de recommendation, navegação e interações do template; substitua conteúdo específico do Nick pelos dados do lead.
 
 ## Antes de começar
 
@@ -15,7 +15,7 @@ Confira `assets/icons/` — já existe uma bibliotequinha de ícones genéricos 
 
 Confira também `assets/market-context/` — tem as duas imagens fixas dos slides de Market Context / Where Growth Leaks (ver seção 4b abaixo): `market-growth.png` e `growth-leaks.png`. São genéricas (não têm dado específico de cliente), reaproveitadas em todo deck.
 
-Confira também `templates/` (`webinar-master.html`, `webinar-master-2.html`, `vsl-master.html`, `lowticket-master.html`) e `templates/references/headline-vault.md` — usados pelo módulo opcional "Entry Point Examples" (ver seção 6b-bis abaixo). Nunca regenere esses templates do zero; copie como ponto de partida, do mesmo jeito que `gar-capital-example.html` é usado pro deck em si.
+Confira também `templates/` (`webinar-master.html`, `webinar-master-2.html`, `vsl-master.html`, `lowticket-master.html`) e `templates/references/headline-vault.md` — usados pelo módulo opcional "Entry Point Examples" (ver seção 6b-bis abaixo). Nunca regenere esses templates do zero; copie como ponto de partida, do mesmo jeito que `nick-fowler-example.html` é usado pro deck em si.
 
 Confira também `references/evaluation-framework.md` — biblioteca dos padrões de bottleneck/opportunity que se repetem entre os decks já feitos (sintetizada a partir de 5 decks reais). Use como referência de linguagem/estrutura ao redigir Observation/Recommendation e Opportunities, mas a escolha do que é relevante pro lead atual continua sendo do usuário.
 
@@ -147,7 +147,7 @@ Depois de tudo respondido, confirme um resumo curto (nome do cliente, nº de bot
 
 ## Como montar o HTML
 
-1. Copie `references/gar-capital-example.html` pra um novo arquivo de trabalho.
+1. Copie `references/nick-fowler-example.html` pra um novo arquivo de trabalho.
 2. Troque `--accent-fill` e `--accent-text` (em ambos os blocos `:root/[data-theme="dark"]` e `[data-theme="light"]`) pela `Brand Color` informada — ajuste também `--accent-soft` pra a mesma cor em baixa opacidade (`rgba(R,G,B,0.1)`). São as únicas variáveis que mudam — todo o resto do design system fica igual.
 2b. **Sempre inclua `<base href="/decks/{client-slug}/">` no `<head>`**, logo depois do `<meta viewport>`. Isso trava a resolução de caminhos relativos (`images/...`) independente de a URL ser acessada com ou sem barra final — sem essa tag, o deck quebra quando alguém acessa `/decks/{slug}` sem a barra no fim (bug real que já aconteceu). Os assets genéricos em `/assets/...` não são afetados por essa tag (caminho absoluto já ignora `<base>`).
 3. Delete os slides de exemplo (Observation/Recommendation 01–06, Opportunities 01–03) e reconstrua a sequência com a quantidade real de blocos que o usuário passou, seguindo a ordem exata que ele deu.
