@@ -9,6 +9,21 @@ description: Gera um deck de slides HTML (auditoria de funil "problema → solu�
 
 Conduz o usuário por uma árvore de perguntas curtas (uma de cada vez) e gera como output um deck de slides em HTML puro (scroll-snap, sem dependências além de Google Fonts), pronto pra push num repo GitHub e deploy no Vercel. Usa como template-base a estrutura visual atual do deck Nick Fowler em `references/nick-fowler-example.html` — **copie esse arquivo como ponto de partida e edite**, nunca regenere o CSS/JS do zero. Preserve o sistema visual, os componentes, modais, diagramas de recommendation, navegação e interações do template; substitua conteúdo específico do Nick pelos dados do lead.
 
+
+## Regra global de implementação: reutilizar os originais, não recriar
+
+**Esta regra vale para o deck inteiro e para todos os módulos da skill — não apenas para o exemplo de post do X.** O deck do Nick Fowler e os templates de referência são a fonte de verdade para a implementação visual e funcional.
+
+- **Comece pelo código existente.** Copie o HTML de referência mais apropriado e edite-o diretamente. Reutilize CSS, JavaScript, componentes, layouts, modais, cards, diagramas, navegação, animações e interações já implementados. Não reconstrua do zero algo que já existe.
+- **Use o template correto para cada formato.** Preserve os templates originais de webinar, VSL e low ticket e suas diferenças. Não substitua um template por outro nem crie uma versão aproximada quando já existe uma referência específica.
+- **Adapte apenas o que precisa mudar para o prospect.** Troque copy específica, identidade, imagens, links e dados do prospect quando necessário. Não altere arbitrariamente a estrutura, o design, o comportamento ou a copy que o usuário já aprovou.
+- **Preserve literalmente os textos fornecidos pelo usuário.** Bottlenecks, observations, recommendations e demais trechos entregues como texto exato devem ser inseridos sem reescrita, resumo, correção de estilo ou mudança de sentido. Só edite se o usuário pedir explicitamente.
+- **Reaproveite assets disponíveis.** Use as imagens, URLs, screenshots, logos, ícones e arquivos já fornecidos ou existentes no repositório. Não os substitua por placeholders ou imagens genéricas se os originais estiverem disponíveis e funcionais.
+- **Não confunda adaptação com reinvenção.** A personalização deve ocorrer no conteúdo específico do lead; a implementação aprovada permanece consistente entre decks. Se algo não existir na referência, crie somente esse elemento novo e mantenha-o alinhado ao sistema existente.
+- **Valide antes de entregar.** Confira o deck final contra os arquivos de referência: conteúdo integral, imagens carregando, template correto por formato, interações funcionando, caminhos de assets corretos e ausência de nomes, links ou imagens residuais de outros prospects.
+
+Em caso de dúvida, priorize a implementação original já aprovada e faça a menor alteração necessária para atender ao prospect atual. Não invente uma solução alternativa sem necessidade.
+
 ## Antes de começar
 
 Confira `assets/icons/` — já existe uma bibliotequinha de ícones genéricos de plataforma (gmail, discord, instagram, x, threads, youtube, linkedin, meta, webinar-generic, free-training-generic). Nunca peça pro usuário re-upload desses; use direto se alguma "opportunity" mencionar uma dessas plataformas. Só peça upload de ícone novo se for uma plataforma que ainda não está na pasta.
