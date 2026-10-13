@@ -143,6 +143,17 @@ Depois do loop de opportunities, sempre insira um slide `slide-section` fixo, an
 - Reescreva os 3 com base no `dossier.md` do lead (ver "Passo 0" acima) — ou, se não existir dossiê salvo, com base no que já foi levantado na conversa (nome via token `{{first_name}}`, oferta, provas sociais, objeções específicas do nicho) — mantendo a mesma função/estrutura de cada email da sequência original (ex: email 1 = reforço da decisão, email 2 = prova social, email 3 = lembrete + redução de fricção pré-call), mas nunca a copy literal de outro cliente.
 - Anexe como um modal "Pre-Call Email Sequence" na Recommendation que o usuário indicar. Se ele não indicar qual, pergunte a qual Recommendation vincular antes de gerar.
 
+
+**Módulo opcional: X Post Example (sob demanda)**
+
+- Quando o usuário pedir conteúdo para X/Twitter ou um exemplo visual de post, use o componente de post do Nick Fowler como referência obrigatória.
+- Copie de `references/nick-fowler-example.html` o botão `See Post Example`, o modal `#xPostModal` e seu markup/CSS/SVG/JS associado. Preserve o layout e comportamento originais; não reconstrua o card do zero nem o substitua por texto simples.
+- Preserve a estrutura: modal claro, card branco, avatar circular, nome, selo azul, handle, timestamp, marca X, copy com quebras de linha e ícones de interação.
+- Substitua nome, handle, avatar/caminho da imagem e copy pelos dados do prospect atual. Nunca deixe referências ou caminhos de Nick Fowler no deck de outro cliente. Não invente handle, resultados, números, renda ou prova social; use apenas dados confirmados. Se faltarem dados, use placeholders neutros ou escreva sem métricas.
+- Adapte a lógica editorial do exemplo do Nick (abertura concreta para o público, raciocínio específico, passos úteis, tom orgânico e fechamento memorável), mas não copie automaticamente sua promessa, seus números ou TikTok Shop.
+- No deck, conecte o botão ao modal certo e posicione-o no slide de opportunity/recommendation sobre X. IDs devem ser únicos. Antes de entregar, verifique o clique do botão, o card completo e a ausência de nome/caminhos do Nick.
+- Se o usuário pedir apenas a copy, entregue apenas a copy; ao construir o deck, reutilize também o componente visual por padrão.
+
 Depois de tudo respondido, confirme um resumo curto (nome do cliente, nº de bottlenecks, nº de opportunities) antes de gerar o HTML final. **Não pergunte pelo texto de fechamento** — o slide de CTA final é sempre fixo (ver item 10 em "Como montar o HTML").
 
 ## Como montar o HTML
