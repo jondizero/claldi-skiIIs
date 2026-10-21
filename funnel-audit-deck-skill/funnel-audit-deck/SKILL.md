@@ -7,18 +7,19 @@ description: Gera um deck de slides HTML (auditoria de funil "problema → solu�
 
 ## O que essa skill faz
 
-Conduz o usuário por uma árvore de perguntas curtas (uma de cada vez) e gera como output um deck de slides em HTML puro (scroll-snap, sem dependências além de Google Fonts), pronto pra push num repo GitHub e deploy no Vercel. Usa como template-base a estrutura visual atual do deck Nick Fowler em `references/nick-fowler-example.html` — **copie esse arquivo como ponto de partida e edite**, nunca regenere o CSS/JS do zero. Preserve o sistema visual, os componentes, modais, diagramas de recommendation, navegação e interações do template; substitua conteúdo específico do Nick pelos dados do lead.
+Conduz o usuário por uma árvore de perguntas curtas (uma de cada vez) e gera como output um deck de slides em HTML puro (scroll-snap, sem dependências além de Google Fonts), pronto pra push num repo GitHub e deploy no Vercel. Usa como template-base único o deck de Neel Parekh em `references/neel-parekh-example.html` — **copie esse arquivo como ponto de partida e edite**, nunca regenere o CSS/JS do zero. Preserve o sistema visual, os componentes, modais, diagramas de recommendation, navegação e interações do template; substitua conteúdo específico do Nick pelos dados do lead.
 
 
 ## Regra global de implementação: reutilizar os originais, não recriar
 
-**Esta regra vale para o deck inteiro e para todos os módulos da skill — não apenas para o exemplo de post do X.** O deck do Nick Fowler e os templates de referência são a fonte de verdade para a implementação visual e funcional.
+**Esta regra vale para o deck inteiro e para todos os módulos da skill — não apenas para o exemplo de post do X.** O deck de Neel Parekh e os templates de referência são a fonte de verdade para a implementação visual e funcional.
 
 - **Comece pelo código existente.** Copie o HTML de referência mais apropriado e edite-o diretamente. Reutilize CSS, JavaScript, componentes, layouts, modais, cards, diagramas, navegação, animações e interações já implementados. Não reconstrua do zero algo que já existe.
 - **Use o template correto para cada formato.** Preserve os templates originais de webinar, VSL e low ticket e suas diferenças. Não substitua um template por outro nem crie uma versão aproximada quando já existe uma referência específica.
 - **Adapte apenas o que precisa mudar para o prospect.** Troque copy específica, identidade, imagens, links e dados do prospect quando necessário. Não altere arbitrariamente a estrutura, o design, o comportamento ou a copy que o usuário já aprovou.
 - **Preserve literalmente os textos fornecidos pelo usuário.** Bottlenecks, observations, recommendations e demais trechos entregues como texto exato devem ser inseridos sem reescrita, resumo, correção de estilo ou mudança de sentido. Só edite se o usuário pedir explicitamente.
 - **Reaproveite assets disponíveis.** Use as imagens, URLs, screenshots, logos, ícones e arquivos já fornecidos ou existentes no repositório. Não os substitua por placeholders ou imagens genéricas se os originais estiverem disponíveis e funcionais.
+- **Atenção ao HTML do Neel:** ele é a referência visual e funcional, não um deck para duplicar com conteúdo residual. Ao iniciar outro prospect, substitua todos os textos, nomes, logos, imagens, criativos e links específicos de Neel. O arquivo usa paths como `/decks/neel-parekh/assets/...` e um `<base href>` específico; ajuste esses caminhos para o novo deck e confirme que nenhum asset do Neel permaneceu.
 - **Não confunda adaptação com reinvenção.** A personalização deve ocorrer no conteúdo específico do lead; a implementação aprovada permanece consistente entre decks. Se algo não existir na referência, crie somente esse elemento novo e mantenha-o alinhado ao sistema existente.
 - **Valide antes de entregar.** Confira o deck final contra os arquivos de referência: conteúdo integral, imagens carregando, template correto por formato, interações funcionando, caminhos de assets corretos e ausência de nomes, links ou imagens residuais de outros prospects.
 
@@ -30,7 +31,7 @@ Confira `assets/icons/` — já existe uma bibliotequinha de ícones genéricos 
 
 Confira também `assets/market-context/` — tem as duas imagens fixas dos slides de Market Context / Where Growth Leaks (ver seção 4b abaixo): `market-growth.png` e `growth-leaks.png`. São genéricas (não têm dado específico de cliente), reaproveitadas em todo deck.
 
-Confira também `templates/` (`webinar-master.html`, `webinar-master-2.html`, `vsl-master.html`, `lowticket-master.html`) e `templates/references/headline-vault.md` — usados pelo módulo opcional "Entry Point Examples" (ver seção 6b-bis abaixo). Nunca regenere esses templates do zero; copie como ponto de partida, do mesmo jeito que `nick-fowler-example.html` é usado pro deck em si.
+Confira também `templates/` (`webinar-master.html`, `webinar-master-2.html`, `vsl-master.html`, `lowticket-master.html`) e `templates/references/headline-vault.md` — usados pelo módulo opcional "Entry Point Examples" (ver seção 6b-bis abaixo). Nunca regenere esses templates do zero; copie como ponto de partida, do mesmo jeito que `neel-parekh-example.html` é usado como base única do deck.
 
 Confira também `references/evaluation-framework.md` — biblioteca dos padrões de bottleneck/opportunity que se repetem entre os decks já feitos (sintetizada a partir de 5 decks reais). Use como referência de linguagem/estrutura ao redigir Observation/Recommendation e Opportunities, mas a escolha do que é relevante pro lead atual continua sendo do usuário.
 
@@ -161,19 +162,19 @@ Depois do loop de opportunities, sempre insira um slide `slide-section` fixo, an
 
 **Módulo opcional: X Post Example (sob demanda)**
 
-- Quando o usuário pedir conteúdo para X/Twitter ou um exemplo visual de post, use o componente de post do Nick Fowler como referência obrigatória.
-- Copie de `references/nick-fowler-example.html` o botão `See Post Example`, o modal `#xPostModal` e seu markup/CSS/SVG/JS associado. Preserve o layout e comportamento originais; não reconstrua o card do zero nem o substitua por texto simples.
+- Quando o usuário pedir conteúdo para X/Twitter ou um exemplo visual de post, use o componente de post do deck de Neel Parekh como referência obrigatória.
+- Copie de `references/neel-parekh-example.html` o botão `See Post Example`, o modal `#xPostModal` e seu markup/CSS/SVG/JS associado. Preserve o layout e comportamento originais; não reconstrua o card do zero nem o substitua por texto simples.
 - Preserve a estrutura: modal claro, card branco, avatar circular, nome, selo azul, handle, timestamp, marca X, copy com quebras de linha e ícones de interação.
-- Substitua nome, handle, avatar/caminho da imagem e copy pelos dados do prospect atual. Nunca deixe referências ou caminhos de Nick Fowler no deck de outro cliente. Não invente handle, resultados, números, renda ou prova social; use apenas dados confirmados. Se faltarem dados, use placeholders neutros ou escreva sem métricas.
-- Adapte a lógica editorial do exemplo do Nick (abertura concreta para o público, raciocínio específico, passos úteis, tom orgânico e fechamento memorável), mas não copie automaticamente sua promessa, seus números ou TikTok Shop.
-- No deck, conecte o botão ao modal certo e posicione-o no slide de opportunity/recommendation sobre X. IDs devem ser únicos. Antes de entregar, verifique o clique do botão, o card completo e a ausência de nome/caminhos do Nick.
+- Substitua nome, handle, avatar/caminho da imagem e copy pelos dados do prospect atual. Nunca deixe referências, nomes, links ou caminhos de assets de Neel Parekh no deck de outro cliente. Não invente handle, resultados, números, renda ou prova social; use apenas dados confirmados. Se faltarem dados, use placeholders neutros ou escreva sem métricas.
+- Adapte a lógica editorial do exemplo de Neel (abertura concreta para o público, raciocínio específico, passos úteis, tom orgânico e fechamento memorável), mas não copie automaticamente sua promessa, seus números ou TikTok Shop.
+- No deck, conecte o botão ao modal certo e posicione-o no slide de opportunity/recommendation sobre X. IDs devem ser únicos. Antes de entregar, verifique o clique do botão, o card completo e a ausência de nome/caminhos residuais de Neel.
 - Se o usuário pedir apenas a copy, entregue apenas a copy; ao construir o deck, reutilize também o componente visual por padrão.
 
 Depois de tudo respondido, confirme um resumo curto (nome do cliente, nº de bottlenecks, nº de opportunities) antes de gerar o HTML final. **Não pergunte pelo texto de fechamento** — o slide de CTA final é sempre fixo (ver item 10 em "Como montar o HTML").
 
 ## Como montar o HTML
 
-1. Copie `references/nick-fowler-example.html` pra um novo arquivo de trabalho.
+1. Copie `references/neel-parekh-example.html` pra um novo arquivo de trabalho.
 2. Troque `--accent-fill` e `--accent-text` (em ambos os blocos `:root/[data-theme="dark"]` e `[data-theme="light"]`) pela `Brand Color` informada — ajuste também `--accent-soft` pra a mesma cor em baixa opacidade (`rgba(R,G,B,0.1)`). São as únicas variáveis que mudam — todo o resto do design system fica igual.
 2b. **Sempre inclua `<base href="/decks/{client-slug}/">` no `<head>`**, logo depois do `<meta viewport>`. Isso trava a resolução de caminhos relativos (`images/...`) independente de a URL ser acessada com ou sem barra final — sem essa tag, o deck quebra quando alguém acessa `/decks/{slug}` sem a barra no fim (bug real que já aconteceu). Os assets genéricos em `/assets/...` não são afetados por essa tag (caminho absoluto já ignora `<base>`).
 3. Delete os slides de exemplo (Observation/Recommendation 01–06, Opportunities 01–03) e reconstrua a sequência com a quantidade real de blocos que o usuário passou, seguindo a ordem exata que ele deu.
